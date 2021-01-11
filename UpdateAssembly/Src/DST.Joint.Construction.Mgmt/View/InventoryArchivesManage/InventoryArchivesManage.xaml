@@ -5,6 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:DST.Joint.Construction.Mgmt.View"
              mc:Ignorable="d"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+xmlns:system="clr-namespace:System;assembly=mscorlib"
+
              xmlns:base="clr-namespace:DST.Controls.Base;assembly=DST.Controls"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:controls="clr-namespace:DST.Controls;assembly=DST.Controls"
@@ -114,6 +117,13 @@
                     <TextBlock Grid.Column="1" Text="-" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     <controls:DatePickerPro Grid.Column="2"  StringFormat="yyyy-MM-dd"  Height="35"
                                         SelectedDate="{Binding CurQueryMBPSampleList.reportTimeEnd, Mode=TwoWay}" />
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="9">
+                    <hc:DatePicker hc:InfoElement.TitleWidth="50" 
+                                   hc:InfoElement.TitlePlacement="Left" 
+                                   hc:InfoElement.Placeholder="请输入"
+                                   Height="30"
+                                   hc:InfoElement.Title="测试时间" SelectedDate="{Binding CurQueryMBPSampleList.reportTimeEnd, Mode=TwoWay}"/>
                 </Grid>
             </Grid>
         </Border>

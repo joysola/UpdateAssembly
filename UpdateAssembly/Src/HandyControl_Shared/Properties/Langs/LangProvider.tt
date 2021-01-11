@@ -3,7 +3,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Collections.Generic"#>
 <#@ assembly name="$(TargetPath)" #>
-<#@ import namespace="HandyControlDemo.Properties.Langs" #>
+<#@ import namespace="HandyControl.Properties.Langs" #>
 <#@ output extension=".cs" #>
 <#
 	var resourceType = typeof(Lang);
@@ -23,15 +23,15 @@ using System.Windows;
 using System.Windows.Data;
 using HandyControl.Tools;
 
-namespace HandyControlDemo.Properties.Langs
+namespace HandyControl.Properties.Langs
 {
     public class LangProvider : INotifyPropertyChanged
     {
-        internal static LangProvider Instance => ResourceHelper.GetResource<LangProvider>("DemoLangs");
+        internal static LangProvider Instance => ResourceHelper.GetResource<LangProvider>("Langs");
 
         private static string CultureInfoStr;
 
-        public static CultureInfo Culture
+        internal static CultureInfo Culture
         {
             get => Lang.Culture;
             set

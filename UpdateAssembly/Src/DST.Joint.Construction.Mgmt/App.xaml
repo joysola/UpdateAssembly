@@ -5,6 +5,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/HandyControl;component/Themes/SkinDefault.xaml"/>
+                <ResourceDictionary Source="/HandyControl;component/Themes/Theme.xaml"/>
                 <ResourceDictionary Source="/DST.Controls;component/Styles/Colors.xaml" />
                 <ResourceDictionary Source="/DST.Controls;component/Styles/AppResourceDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>

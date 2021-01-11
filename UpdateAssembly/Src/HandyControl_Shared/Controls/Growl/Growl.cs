@@ -12,6 +12,7 @@ using HandyControl.Properties.Langs;
 using HandyControl.Tools;
 using HandyControl.Tools.Extension;
 
+
 namespace HandyControl.Controls
 {
     /// <summary>

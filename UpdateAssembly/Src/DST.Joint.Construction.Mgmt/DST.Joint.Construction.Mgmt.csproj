@@ -339,6 +339,10 @@
       <Project>{83F8861C-E19E-425D-9BCC-C49F2EB230FD}</Project>
       <Name>DST.Database</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DST.HandyControl\DST.HandyControl.csproj">
+      <Project>{a62c9a7a-1de0-4379-b42f-c4bc393564ac}</Project>
+      <Name>DST.HandyControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DST.PathologyArchivesSystem.ViewModel\DST.PathologyArchivesSystem.ViewModel.csproj">
       <Project>{79E6F41F-23C4-442F-9211-DCF6FA0EE40A}</Project>
       <Name>DST.PathologyArchivesSystem.ViewModel</Name>

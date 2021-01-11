@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <TargetFrameworks>net461;net462;net472</TargetFrameworks>
+    <TargetFrameworks>net461;net462;</TargetFrameworks>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <IncludeSymbols>true</IncludeSymbols>
@@ -16,6 +16,12 @@
     <OutputPath>bin\x64\Release\</OutputPath>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Properties\Langs\**" />
+    <EmbeddedResource Remove="Properties\Langs\**" />
+    <None Remove="Properties\Langs\**" />
+    <Page Remove="Properties\Langs\**" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight">
       <HintPath>..\..\Lib\GalaSoft.MvvmLight.dll</HintPath>
@@ -74,5 +80,4 @@
   <ItemGroup>
     <Compile Remove="Converters\ProductTypeConverter.cs" />
   </ItemGroup>
-  <Import Project="..\HandyControl_Shared\HandyControl_Shared.projitems" Label="Shared" />
 </Project>
