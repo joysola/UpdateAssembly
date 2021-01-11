@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="FIcon" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="/DST;component/Resources/Font/#SF2015"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource TextForeground}" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+
+    <!--默认样式-->
+    <Style x:Key="DefaultRadioButton" TargetType="{x:Type RadioButton}">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource TextForeground}"></Setter>
+        <Setter Property="Padding" Value="0"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontSize}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid x:Name="grid" Margin="{TemplateBinding Padding}" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock x:Name="icon" Text="Ⓞ" Style="{StaticResource FIcon}" SnapsToDevicePixels="True"
+                                        FontSize="23"
+                                        Margin="1, 1, 3, 1"
+                                        Foreground="{TemplateBinding Foreground}" />
+                            <ContentPresenter VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                    <!--触发器：设置选中状态符号-->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Text" Value="⦿" TargetName="icon" ></Setter>
+                            <Setter Property="Foreground" Value="{StaticResource CheckedForeground}"></Setter>
+                            <Setter Property="FontSize" Value="35" TargetName="icon" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="{StaticResource MouseOverForeground}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" TargetName="grid" ></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

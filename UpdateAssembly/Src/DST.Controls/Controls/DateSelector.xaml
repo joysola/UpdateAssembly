@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="DST.Controls.DateSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+             mc:Ignorable="d" x:Name="uc"
+             d:DesignHeight="450" d:DesignWidth="650">
+    <Grid x:Name="gridMain" Margin="0" Background="Transparent">
+        <StackPanel x:Name="spInputSpecial" Orientation="Horizontal">
+            <TextBox x:Name="tbHourSpecial" Style="{StaticResource TextBoxWithUnderlineForDatePicker}"
+                     PreviewKeyDown="TextBox_PreviewKeyDown" PreviewTextInput="TextBox_PreviewTextInput" GotKeyboardFocus="tbHourSpecial_GotKeyboardFocus"
+                     TextChanged="TextBox_TextChanged" Tag="23" input:InputMethod.IsInputMethodEnabled="False" Margin="0"
+                     PreviewMouseLeftButtonDown="tbInput_PreviewMouseLeftButtonDown" PreviewMouseDoubleClick="tb_PreviewMouseDoubleClick" />
+            <TextBox x:Name="tbSplitSpecial" Style="{StaticResource TextBoxWithNoBorder}" Text=":" Foreground="#26727D" MinWidth="10"
+                     IsReadOnly="True" Margin="0" />
+            <TextBox x:Name="tbMinuteSpecial" Style="{StaticResource TextBoxWithUnderlineForDatePicker}"
+                     PreviewKeyDown="TextBox_PreviewKeyDown" PreviewTextInput="TextBox_PreviewTextInput" GotKeyboardFocus="tbHourSpecial_GotKeyboardFocus"
+                     TextChanged="TextBox_TextChanged" Tag="59" input:InputMethod.IsInputMethodEnabled="False"
+                     PreviewMouseLeftButtonDown="tbInput_PreviewMouseLeftButtonDown"
+                     PreviewMouseDoubleClick="tb_PreviewMouseDoubleClick" Margin="0" />
+            <Image x:Name="imgCalendar" Height="23" Width="23" Margin="3,0,0,0" PreviewMouseLeftButtonDown="imgCalendar_PreviewMouseLeftButtonDown"
+                   Source="/DST;component/Images/calendarred.png" Visibility="Visible" />
+            <Image x:Name="imgDelete" Height="23" Width="23" Margin="3,0,0,0" PreviewMouseLeftButtonDown="imgDelete_PreviewMouseLeftButtonDown"
+                   Source="/DST;component/Images/X-press.png" Visibility="Collapsed" />
+        </StackPanel>
+
+        <Popup x:Name="popup" PopupAnimation="Fade" Width="auto" Height="auto" PlacementTarget="{Binding ElementName=spInputSpecial}"
+               Placement="Bottom"  AllowsTransparency="True" StaysOpen="True" VerticalOffset="5" Focusable="False">
+            <Border Margin="0,0,8,8" Background="White" BorderThickness="0" BorderBrush="Gray">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" Opacity="0.4" />
+                </Border.Effect>
+                <Grid x:Name="mainGrid" Margin="2" Background="White">
+                    <!--日历-->
+                    <Calendar x:Name="calendar" Grid.Row="1" HorizontalAlignment="Left" BorderThickness="0" Style="{StaticResource CalendarStyle}"
+                              CalendarItemStyle="{StaticResource CalendarItemStyle}" Width="250" Height="265" Focusable="False"
+                              CalendarDayButtonStyle="{StaticResource CalendarDayButtonStyle}"
+                              CalendarButtonStyle="{StaticResource CalendarButtonStyle}"
+                              SelectedDatesChanged="calendar_SelectedDatesChanged" PreviewMouseLeftButtonUp="calendar_PreviewMouseLeftButtonUp"  MouseLeave="calendar_MouseLeave" MouseEnter="calendar_MouseEnter" />
+                </Grid>
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

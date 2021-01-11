@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <!--把Colors.xaml样式放在app.xaml中加载，不能和其他样式同时加载，因为其他样式会引用到colors的样式-->
+        <!--<ResourceDictionary Source="Colors.xaml" />-->
+        <ResourceDictionary Source="TextBox.xaml" />
+        <ResourceDictionary Source="ConfirmMessageBox.xaml" />
+        <ResourceDictionary Source="ContentWindow.xaml" />
+        <ResourceDictionary Source="Button.xaml" />
+        <ResourceDictionary Source="DataGrid.xaml" />
+        <ResourceDictionary Source="ListView.xaml" />
+        <ResourceDictionary Source="ComboBox.xaml" />
+        <ResourceDictionary Source="Calendar.xaml" />
+        <ResourceDictionary Source="ScrollBar.xaml" />
+        <ResourceDictionary Source="Expander.xaml" />
+        <ResourceDictionary Source="TextBlock.xaml" />
+        <ResourceDictionary Source="RadioButton.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<English>
+  <Special_Folder>Special Folder</Special_Folder>
+  <My_Documents>My Documents</My_Documents>
+  <My_Picture>My Picture</My_Picture>
+  <Desktop>Desktop</Desktop>
+  <Favorite>Favorite</Favorite>
+  <My_Computer>My Computer</My_Computer>
+  <Network>Network</Network>
+  <Close_Confirm>Do you really want to exit the program?</Close_Confirm>
+  <version>Version</version>
+  <Language>Language</Language>
+
+  <App_Name>DeepSight Viewer</App_Name>
+    <Save_snapshot>Save snapshot</Save_snapshot>
+    <Open_startup_screen>Open startup screen</Open_startup_screen>
+    <Help_documents>Help documents</Help_documents>
+    <about>about</about>
+    <Gesture_rules_of_touchpad>Gesture rules of touchpad</Gesture_rules_of_touchpad>
+    <preservation>preservation</preservation>
+    <Flip_vertically>Flip vertically</Flip_vertically>
+    <Flip_horizontally>Flip horizontally</Flip_horizontally>
+    <Reset>Reset</Reset>
+    <Notes_list>Notes list</Notes_list>
+    <Insert_arrow>Insert arrow</Insert_arrow>
+    <Fixed_size_circle>Fixed size circle</Fixed_size_circle>
+    <Fixed_size_rectangle>Fixed size rectangle</Fixed_size_rectangle>
+    <Linear_measurement_note>Linear measurement note</Linear_measurement_note>
+    <Adjustable_size_circle>Adjustable size circle</Adjustable_size_circle>
+    <Adjustable_rectangle>Adjustable rectangle</Adjustable_rectangle>
+    <Pixel_information>Pixel information</Pixel_information>
+    <Slide_description>Slide description</Slide_description>
+    <Browse_history>Browse history</Browse_history>
+    <close>close</close>
+    <Actual_pixel_browsing>Actual pixel browsing</Actual_pixel_browsing>
+    <Section_panorama>Section panorama</Section_panorama>
+    <help>help</help>
+    <set_up>set up</set_up>
+    <Color_correction>Color correction</Color_correction>
+    <Zoom_horizontal>Zoom horizontal</Zoom_horizontal>
+    <Measuring_distance>Measuring distance</Measuring_distance>
+    <Screenshot>Screenshot</Screenshot>
+    <Rotate_Flip>Rotate / Flip</Rotate_Flip>
+    <notes>notes</notes>
+    <Selection_control>Selection / control</Selection_control>
+    <Label_area>Label area</Label_area>
+    <Magnified_length>Magnified length</Magnified_length>
+    <Slide_overview>Slide overview</Slide_overview>
+    <Slide_operation>Slide operation</Slide_operation>
+    <Enable_smooth_navigation>Enable smooth navigation</Enable_smooth_navigation>
+    <Label_reverse>Label reverse</Label_reverse>
+    <Enable_zoom_limit>Enable zoom limit</Enable_zoom_limit>
+    <enlarge>enlarge</enlarge>
+    <absolutely>absolutely</absolutely>
+    <relevant>relevant</relevant>
+    <diameter>diameter</diameter>
+    <Fixed_circle>Fixed circle</Fixed_circle>
+    <the_measure_of_area>the measure of area</the_measure_of_area>
+    <height>height</height>
+    <width>width</width>
+    <Fixed_rectangle>Fixed rectangle</Fixed_rectangle>
+    <fluorescence>fluorescence</fluorescence>
+    <Mingchang>Mingchang</Mingchang>
+    <Default_color>Default color</Default_color>
+    <Comment_name>Comment name</Comment_name>
+    <Slice_name>Slice name</Slice_name>
+    <Set_font_size>Set font size</Set_font_size>
+    <Enter_preset>Enter preset</Enter_preset>
+    <Show_comment_size>Show comment size</Show_comment_size>
+    <auto_number>auto number</auto_number>
+    <Automatic_naming>Automatic naming</Automatic_naming>
+    <Display_name>Display name</Display_name>
+    <Reverse_mouse_zoom>Reverse mouse zoom</Reverse_mouse_zoom>
+    <Use_memory_as_cache>Use memory as cache</Use_memory_as_cache>
+    <Service_mode>Service mode</Service_mode>
+    <debug_information>debug information</debug_information>
+    <browse>browse</browse>
+    <advanced_setting>advanced setting</advanced_setting>
+    <Note_requirements>Note requirements</Note_requirements>
+    <Note_size>Note size</Note_size>
+  <save>Save</save>
+
+  <zoom_to>Zoom to</zoom_to>
+
+  <Barcode>Barcode</Barcode>
+  <StartTime>Scan Start [YYYY-MM-DD] [HH:MM:SS]</StartTime>
+  <DurationTime>Scan Duration [HH:MM:SS]</DurationTime>
+  <StitchWidth>Slide Dimension in pixels(W)</StitchWidth>
+  <StitchHeight>Slide Dimension in pixels(H)</StitchHeight>
+  <ViewCount>View Count</ViewCount>
+  <ZStackCapture>Level Capture</ZStackCapture>
+  <ZStackSel>Level ZStack</ZStackSel>
+  <ZStackStep>Step Size (um)</ZStackStep>
+  <CTFAvg>CTF</CTFAvg>
+  <CTFThreshold>CTF Threshold</CTFThreshold>
+  <MachineID>Scanner ID</MachineID>
+  <CompressFileExt>Image File Format</CompressFileExt>
+  </English>

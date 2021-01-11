@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFrameworks>net461;net462;net472</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <LangVersion>8.0</LangVersion>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\X-hover.png" />
+    <Resource Include="Images\X-normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loading.png" />
+    <Resource Include="Images\popup_icon01.png" />
+    <Resource Include="Images\popup_icon02.png" />
+    <Resource Include="Images\popup_icon03.png" />
+    <Resource Include="Images\popup_icon04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DST.Common\DST.Common.csproj" />
+    <ProjectReference Include="..\DST.Database\DST.Database.csproj" />
+    <!--<FrameworkReference Include="Microsoft.WindowsDesktop.App.WPF" />-->
+  
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close.png" />
+    <Resource Include="Images\close1.png" />
+    <Resource Include="Images\close2.png" />
+    <Resource Include="Images\close_icon02.png" />
+    <Resource Include="Images\Coevery.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DatePickerClear.png" />
+    <Resource Include="Images\searchTime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Converters\ProductTypeConverter.cs" />
+  </ItemGroup>
+  <Import Project="..\HandyControl_Shared\HandyControl_Shared.projitems" Label="Shared" />
+</Project>

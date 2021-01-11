@@ -1,0 +1,1038 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BADEF95C-39D6-4F3B-A2FC-F5E0A784531D}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>DST.TileImageViewer</RootNamespace>
+    <AssemblyName>DST.TileImageViewer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Lib\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\TileImageViewer\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Blob, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\OpenCvSharp.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.UserInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\OpenCvSharp.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar">
+      <HintPath>..\..\Lib\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\Lib\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\Lib\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\TileImageViewer\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\TileImageViewer\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DSViewControl.xaml.cs">
+      <DependentUpon>DSViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TileImageViewer\Animation\Animate.cs" />
+    <Compile Include="TileImageViewer\Animation\PageZoomAnimation.cs" />
+    <Compile Include="TileImageViewer\Colors\BasisColors.cs" />
+    <Compile Include="TileImageViewer\Colors\BorderColors.cs" />
+    <Compile Include="TileImageViewer\Colors\ColorEnums.cs" />
+    <Compile Include="TileImageViewer\Colors\ColorExt.cs" />
+    <Compile Include="TileImageViewer\Colors\GradientColors.cs" />
+    <Compile Include="TileImageViewer\Colors\LineColors.cs" />
+    <Compile Include="TileImageViewer\Colors\StatusColors.cs" />
+    <Compile Include="TileImageViewer\Colors\TableColors.cs" />
+    <Compile Include="TileImageViewer\Colors\TextColors.cs" />
+    <Compile Include="TileImageViewer\Constants.cs" />
+    <Compile Include="TileImageViewer\Controls\Btn\UCBtnExt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Btn\UCBtnExt.designer.cs">
+      <DependentUpon>UCBtnExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Btn\UCBtnFillet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Btn\UCBtnFillet.designer.cs">
+      <DependentUpon>UCBtnFillet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Btn\UCBtnImg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Btn\UCBtnImg.designer.cs">
+      <DependentUpon>UCBtnImg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\KeyBord\UCKeyBorderAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\KeyBord\UCKeyBorderAll.Designer.cs">
+      <DependentUpon>UCKeyBorderAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\KeyBord\UCKeyBorderNum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\KeyBord\UCKeyBorderNum.Designer.cs">
+      <DependentUpon>UCKeyBorderNum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\KeyBord\UCKeyBorderPay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\KeyBord\UCKeyBorderPay.Designer.cs">
+      <DependentUpon>UCKeyBorderPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Panel\UCPanelDialog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Panel\UCPanelDialog.Designer.cs">
+      <DependentUpon>UCPanelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Panel\UCPanelParent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Panel\UCPanelParent.designer.cs">
+      <DependentUpon>UCPanelParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Panel\UCPanelQuote.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Split\UCSplitLine_H.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Split\UCSplitLine_H.Designer.cs">
+      <DependentUpon>UCSplitLine_H.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Split\UCSplitLine_V.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Split\UCSplitLine_V.Designer.cs">
+      <DependentUpon>UCSplitLine_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Switch\UCSwitch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Switch\UCSwitch.Designer.cs">
+      <DependentUpon>UCSwitch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Tab\TabControlExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Text\KeyBoardType.cs" />
+    <Compile Include="TileImageViewer\Controls\Text\TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Text\TextBoxEx.Designer.cs">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Text\TextBoxTransparent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Text\UCNumTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Text\UCNumTextBox.Designer.cs">
+      <DependentUpon>UCNumTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Text\UCTextBoxEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Text\UCTextBoxEx.Designer.cs">
+      <DependentUpon>UCTextBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\Text\win32.cs" />
+    <Compile Include="TileImageViewer\Controls\TrackBar\UCTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\UCControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Controls\UCControlBase.designer.cs">
+      <DependentUpon>UCControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\FileUtils.cs" />
+    <Compile Include="TileImageViewer\Forms\FrmAnchor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmAnchor.designer.cs">
+      <DependentUpon>FrmAnchor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmAnchorTips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmAnchorTips.designer.cs">
+      <DependentUpon>FrmAnchorTips.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmBase.designer.cs">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmTransparent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmTransparent.designer.cs">
+      <DependentUpon>FrmTransparent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmWaiting.designer.cs">
+      <DependentUpon>FrmWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmWithTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\Forms\FrmWithTitle.designer.cs">
+      <DependentUpon>FrmWithTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmAnnotationSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmAnnotationSetting.Designer.cs">
+      <DependentUpon>FrmAnnotationSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmColorSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmColorSet.Designer.cs">
+      <DependentUpon>FrmColorSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmFolderSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmFolderSelect.Designer.cs">
+      <DependentUpon>FrmFolderSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmPageMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmPageMap.Designer.cs">
+      <DependentUpon>FrmPageMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmSampleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmSampleInfo.Designer.cs">
+      <DependentUpon>FrmSampleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\GlobalData.cs" />
+    <Compile Include="TileImageViewer\Helpers\ControlHelper.cs" />
+    <Compile Include="TileImageViewer\Helpers\Ext.cs" />
+    <Compile Include="TileImageViewer\Helpers\GraphDirection.cs" />
+    <Compile Include="TileImageViewer\Helpers\ITheme.cs" />
+    <Compile Include="TileImageViewer\Helpers\MouseHook.cs" />
+    <Compile Include="TileImageViewer\Helpers\NativeMethods.cs" />
+    <Compile Include="TileImageViewer\Helpers\NetShareFolderEnmu.cs" />
+    <Compile Include="TileImageViewer\Helpers\TextInputType.cs" />
+    <Compile Include="TileImageViewer\Helpers\WindowsHook.cs" />
+    <Compile Include="TileImageViewer\IconFont\FontIcons.cs" />
+    <Compile Include="TileImageViewer\IconFont\FontImages.cs" />
+    <Compile Include="TileImageViewer\ImgCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\ImgCtrlPage.cs" />
+    <Compile Include="TileImageViewer\ImgCtrlTransHelper.cs" />
+    <Compile Include="TileImageViewer\ImgHelper.cs" />
+    <Compile Include="TileImageViewer\Language.cs" />
+    <Compile Include="TileImageViewer\MagCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\MagCtrl.Designer.cs">
+      <DependentUpon>MagCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\Model\Annotation.cs" />
+    <Compile Include="TileImageViewer\Model\CImgTag.cs" />
+    <Compile Include="TileImageViewer\Model\ColorCorrection.cs" />
+    <Compile Include="TileImageViewer\Model\ColorCorrectionManager.cs" />
+    <Compile Include="TileImageViewer\Model\DbContext.cs" />
+    <Compile Include="TileImageViewer\Model\Gender.cs" />
+    <Compile Include="TileImageViewer\Model\MAbsRectangle.cs" />
+    <Compile Include="TileImageViewer\Model\MapPoint.cs" />
+    <Compile Include="TileImageViewer\Model\MapRectangle.cs" />
+    <Compile Include="TileImageViewer\Model\ScanPage.cs" />
+    <Compile Include="TileImageViewer\Model\ScanPageLevel.cs" />
+    <Compile Include="TileImageViewer\Model\Setting.cs" />
+    <Compile Include="TileImageViewer\Model\SettingManager.cs" />
+    <Compile Include="TileImageViewer\Model\Shape.cs" />
+    <Compile Include="TileImageViewer\Model\Stock.cs" />
+    <Compile Include="TileImageViewer\PageException.cs" />
+    <Compile Include="TileImageViewer\PathUtil.cs" />
+    <Compile Include="TileImageViewer\Program.cs" />
+    <Compile Include="TileImageViewer\RightClickMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\ScanPageCache.cs" />
+    <Compile Include="TileImageViewer\SlicesCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\SlicesCtrl.Designer.cs">
+      <DependentUpon>SlicesCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\SlideInfoCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\SlideInfoCtrl.Designer.cs">
+      <DependentUpon>SlideInfoCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\StrHelper.cs" />
+    <Compile Include="TileImageViewer\TransparentCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\TransparentCtrl.Designer.cs">
+      <DependentUpon>TransparentCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\UIEditor\FrmSelectImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TileImageViewer\UIEditor\FrmSelectImage.Designer.cs">
+      <DependentUpon>FrmSelectImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TileImageViewer\UIEditor\ImagePropertyEditor.cs" />
+    <Content Include="TileImageViewer\OpenCvSharpExtern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Btn\UCBtnExt.resx">
+      <DependentUpon>UCBtnExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Btn\UCBtnFillet.resx">
+      <DependentUpon>UCBtnFillet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Btn\UCBtnImg.resx">
+      <DependentUpon>UCBtnImg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\KeyBord\UCKeyBorderAll.resx">
+      <DependentUpon>UCKeyBorderAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\KeyBord\UCKeyBorderNum.resx">
+      <DependentUpon>UCKeyBorderNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\KeyBord\UCKeyBorderPay.resx">
+      <DependentUpon>UCKeyBorderPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Panel\UCPanelDialog.resx">
+      <DependentUpon>UCPanelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Panel\UCPanelParent.resx">
+      <DependentUpon>UCPanelParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Split\UCSplitLine_H.resx">
+      <DependentUpon>UCSplitLine_H.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Split\UCSplitLine_V.resx">
+      <DependentUpon>UCSplitLine_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Switch\UCSwitch.resx">
+      <DependentUpon>UCSwitch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Text\TextBoxTransparent.resx">
+      <DependentUpon>TextBoxTransparent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Text\UCNumTextBox.resx">
+      <DependentUpon>UCNumTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\Text\UCTextBoxEx.resx">
+      <DependentUpon>UCTextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Controls\UCControlBase.resx">
+      <DependentUpon>UCControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Forms\FrmAnchor.resx">
+      <DependentUpon>FrmAnchor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Forms\FrmAnchorTips.resx">
+      <DependentUpon>FrmAnchorTips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Forms\FrmBase.resx">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Forms\FrmTransparent.resx">
+      <DependentUpon>FrmTransparent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Forms\FrmWaiting.resx">
+      <DependentUpon>FrmWaiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\Forms\FrmWithTitle.resx">
+      <DependentUpon>FrmWithTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\FrmAnnotationSetting.resx">
+      <DependentUpon>FrmAnnotationSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\FrmColorSet.resx">
+      <DependentUpon>FrmColorSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\FrmFolderSelect.resx">
+      <DependentUpon>FrmFolderSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\FrmPageMap.resx">
+      <DependentUpon>FrmPageMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\FrmSampleInfo.resx">
+      <DependentUpon>FrmSampleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\MagCtrl.resx">
+      <DependentUpon>MagCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\SlicesCtrl.resx">
+      <DependentUpon>SlicesCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\SlideInfoCtrl.resx">
+      <DependentUpon>SlideInfoCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\TransparentCtrl.resx">
+      <DependentUpon>TransparentCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileImageViewer\UIEditor\FrmSelectImage.resx">
+      <DependentUpon>FrmSelectImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TileImageViewer\App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="TileImageViewer\IconFont\ElegantIcons.ttf" />
+    <Resource Include="TileImageViewer\IconFont\FontAwesome.ttf" />
+    <Content Include="TileImageViewer\NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="TileImageViewer\NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TileImageViewer\packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Language\Chinese.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Language\English.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a4z28-xygp9-001.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a4z28-xygp9-002.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a4z28-xygp9-003.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\caret-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\caret-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\checkbox0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\checkbox00.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\checkbox1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\checkbox10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chevron-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chevron-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ComboBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dateRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\datetLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DefaultBarcode.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dialog_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_add_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_remove_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_search_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_about_us.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_about_us_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_An_Arrow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_arrow_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_circle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_circle_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_fix_circle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_fixcircle_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_fixrectangle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_fixrectangle_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_line.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_line_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_list.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_rectangle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_an_rectangle_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_anlist_color.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_anlist_copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_anlist_delete.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_anlist_exit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_anlist_export.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_anlist_hide.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_anlist_save.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_anlist_toolbar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_annotation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_annotation_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_bottle.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_bottle_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_browser.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_browser_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_camera.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_camera_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_colorplate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_colorplate_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_compass.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_compass_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_favorite.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_favorite_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_favorite_press_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_full_screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_full_screen_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_help.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_help_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_lock.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_lock_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_mag.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_mag_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_mouse_and_hand.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_mouse_and_hand_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_mouse_switch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_mouse_switch_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_pen.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_pen_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_qr.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_qr_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_real_pixel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_real_pixel_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_reload.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_reload_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_reset.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_reset_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_rotate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_rotate_hor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_rotate_hor_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_rotate_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_rotate_ver.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_rotate_ver_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_ruler.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_ruler_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_save_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_search.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_search_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_search_press_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_senior_setting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_senior_setting_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_setting.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_setting_pressed.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_setting_save.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_setting_save_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_text.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_text_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_touchpad_gesture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_touchpad_gesture_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_user_guide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_user_guide_press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons_rotate_180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons_save_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons_senior_setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\input_clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\keyboard_bs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\list_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\list_subtract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\more1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\qty_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\radioButton0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\radioButton00.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\radioButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\radioButton10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sanjiao1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sanjiao2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\show_map_trace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\show_map_trace_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tips.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tu_ding_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tu_ding_close_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tu_ding_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tu_ding_open_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\保存文件按钮1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\设置1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DSViewControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DST.Common\DST.Common.csproj">
+      <Project>{f2f3b1d3-08f5-4d19-bf56-8b5489f7027c}</Project>
+      <Name>DST.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DST.Controls\DST.Controls.csproj">
+      <Project>{0bc18694-7787-4c5c-967b-56beba53a9cf}</Project>
+      <Name>DST.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DST.Database\DST.Database.csproj">
+      <Project>{83f8861c-e19e-425d-9bcc-c49f2eb230fd}</Project>
+      <Name>DST.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DST.PathologyArchivesSystem.ViewModel\DST.PathologyArchivesSystem.ViewModel.csproj">
+      <Project>{79E6F41F-23C4-442F-9211-DCF6FA0EE40A}</Project>
+      <Name>DST.PathologyArchivesSystem.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

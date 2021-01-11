@@ -1,0 +1,172 @@
+﻿<base:BaseUserControl x:Class="DST.Joint.Construction.Mgmt.View.IAM_AddEditSample"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:DST.Joint.Construction.Mgmt.View"
+             xmlns:base="clr-namespace:DST.Controls.Base;assembly=DST.Controls"
+             xmlns:controls="clr-namespace:DST.Controls;assembly=DST.Controls"
+             xmlns:helper="clr-namespace:DST.Common.Helper;assembly=DST.Common"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:converter="clr-namespace:DST.Controls.Converters;assembly=DST.Controls"
+             xmlns:viewmodel="clr-namespace:DST.PathologyArchivesSystem.ViewModel;assembly=DST.PathologyArchivesSystem.ViewModel"
+             d:DataContext="{d:DesignInstance Type=viewmodel:IAM_AddEditSampleViewModel}"
+             mc:Ignorable="d"
+             d:DesignHeight="750" d:DesignWidth="800">
+    <base:BaseUserControl.Resources>
+        <helper:BindingProxy x:Key="BindingProxy" Data="{Binding}" />
+        <converter:CustomtoBoolVisibilityConverter x:Key="CustomtoBoolVisibilityConverter" />
+    </base:BaseUserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--0-->
+            <RowDefinition />
+            <!--1-->
+            <RowDefinition />
+            <!--2-->
+            <RowDefinition />
+            <!--3-->
+            <RowDefinition />
+            <!--4-->
+            <RowDefinition />
+            <!--5-->
+            <RowDefinition />
+            <!--7-->
+            <RowDefinition />
+            <!--6-->
+            <RowDefinition />
+            <!--8-->
+            <RowDefinition />
+            <!--9-->
+            <RowDefinition />
+            <!--10-->
+            <RowDefinition />
+            <!--11-->
+            <RowDefinition />
+            <!--12-->
+            <RowDefinition />
+            <!--13-->
+            <!--<RowDefinition />-->
+            <!--14-->
+            <!--<RowDefinition />-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="0.3*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <!--<TextBlock   Text="*"  VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Red" />-->
+            <TextBlock  Text="条码号："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </StackPanel>
+        <TextBox controls:ControlAttachProperty.Watermark ="请输入条码号" Grid.Row="0" Grid.Column="1"  Text="{Binding MBPSample.barCode}" VerticalContentAlignment="Center" Height="30" Margin="0,0,10,0" />
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="住院/门诊号："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox controls:ControlAttachProperty.Watermark ="请输入住院/门诊号"  Grid.Row="0" Grid.Column="3"  Text="{Binding MBPSample.patentNumber}" VerticalContentAlignment="Center" Height="30" Margin="0,0,10,0" />
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <TextBlock  Text="*"  VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Red" />
+            <TextBlock  Text="取样日期："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </StackPanel>
+        <controls:DatePickerPro Grid.Row="1" Grid.Column="3" StringFormat="yyyy-MM-dd" Height="35" Margin="0,0,10,0"
+                                SelectedDate="{Binding MBPSample.gatherTime, Mode=TwoWay}" />
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <!--<TextBlock  Text="*"  VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Red" />-->
+            <TextBlock  Text="身份证号："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </StackPanel>
+        <TextBox controls:ControlAttachProperty.Watermark ="请输入身份证号" Grid.Row="1" Grid.Column="1" Text="{Binding MBPSample.idCard}" VerticalContentAlignment="Center" Height="30" Margin="0,0,10,0">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="LostFocus">
+                    <i:InvokeCommandAction Command="{Binding IDCardChangeCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <TextBlock  Text="*"  VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Red" />
+            <TextBlock  Text="姓名："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </StackPanel>
+        <TextBox controls:ControlAttachProperty.Watermark ="请输入患者姓名" Grid.Row="2" Grid.Column="1"  Text="{Binding MBPSample.patientName}" VerticalContentAlignment="Center" Height="30" Margin="0,0,10,0" />
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <TextBlock  Text="*"  VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Red" />
+            <TextBlock  Text="年龄："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </StackPanel>
+        <TextBox controls:ControlAttachProperty.Watermark ="请输入患者年龄" Grid.Row="2" Grid.Column="3"  Text="{Binding MBPSample.patientAge, Mode=TwoWay}" VerticalContentAlignment="Center" Height="30" Margin="0,0,10,0" />
+        <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <TextBlock  Text="*"  VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Red" />
+            <TextBlock  Text="性别："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1"  Orientation="Horizontal">
+            <RadioButton x:Name="rbFemale"  Content="女" Style="{StaticResource DefaultRadioButton}"  Command="{Binding ChangeSexCommand}" CommandParameter="2" VerticalAlignment="Center" GroupName="Sex" HorizontalAlignment="Center" IsChecked="True" />
+            <RadioButton x:Name="rbMale" Content="男"  Style="{StaticResource DefaultRadioButton}"  Command="{Binding ChangeSexCommand}" CommandParameter="1"  VerticalAlignment="Center" GroupName="Sex" HorizontalAlignment="Center" Margin="10,0" />
+        </StackPanel>
+        <TextBlock Grid.Row="3" Grid.Column="2"  Text="手机号："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox controls:ControlAttachProperty.Watermark ="请输入患者手机号" Grid.Row="3" Grid.Column="3"  Text="{Binding MBPSample.patientPhone}" VerticalContentAlignment="Center" Height="30" Margin="0,0,10,0" />
+        <!--<TextBlock Grid.Row="5" Grid.Column="0"  Text="婚姻："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <ComboBox Grid.Row="5" Grid.Column="1" SelectedValue="{Binding MBPSample.Test_Item}"  Height="35" VerticalContentAlignment="Center" Margin="0,0,10,0"
+                          Style="{StaticResource ComboBoxStyle}" SelectedValuePath="Key" DisplayMemberPath="Value"
+                          Text="请选择婚姻情况" ItemsSource="{Binding GlassSlideTestItemDDict}">
+        </ComboBox>-->
+            <!--<ComboBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <EventSetter  Event="MouseMove"  Handler="ComboBoxItem_MouseMove" />
+
+                    <Setter Property="ContextMenu">
+                        <Setter.Value>
+                            <ContextMenu DataContext="{Binding Data, Source={StaticResource BindingProxy}}">
+                                <ContextMenu.ItemContainerStyle>
+                                    <Style TargetType="MenuItem">
+                                        <Setter Property="Command"
+                                                Value="{Binding DataContext.ProductTypeChangeCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
+                                        <Setter Property="Header" Value="{Binding name}" />
+                                        <Setter Property="CommandParameter" Value="{Binding value}" />
+                                    </Style>
+                                </ContextMenu.ItemContainerStyle>
+                            </ContextMenu>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderThickness" Value="2" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.ItemContainerStyle>-->
+        <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <TextBlock  Text="*"  VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Red" />
+            <TextBlock  Text="检查项目："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </StackPanel>
+        <ComboBox Grid.Row="4" Grid.Column="1" SelectedValue="{Binding MBPSample.productId}"  Height="35" VerticalContentAlignment="Center" Margin="0,0,10,0"
+                          Style="{StaticResource ComboBoxStyle}" SelectedValuePath="id" DisplayMemberPath="name" IsEnabled="{Binding IsAdd}"
+                          Text="请选择检查项目" ItemsSource="{Binding ProductDict}"
+                  SelectionChanged="cbProduct_SelectionChanged"
+                  x:Name="cbProduct">
+        </ComboBox>
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="*"  VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Red" Visibility="Collapsed" x:Name="tbItemType" />
+        <ComboBox Grid.Row="4" Grid.Column="3" SelectedValue="{Binding MBPSample.productType}"  Height="35" VerticalContentAlignment="Center" Margin="0,0,10,0"
+                          Style="{StaticResource ComboBoxStyle}" SelectedValuePath="value" DisplayMemberPath="name" IsEnabled="{Binding IsAdd}"
+                          Text="请选择检查类型" ItemsSource="{Binding ProductTypes}" Visibility="Collapsed"
+                  x:Name="cbType">
+        </ComboBox>
+        <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
+
+            <TextBlock   Text="临床表现/  "  VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <TextBlock   Text="临床检查所见："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </StackPanel>
+
+        <TextBox controls:ControlAttachProperty.Watermark ="请输入临床表现" Grid.Row="5" Grid.Column="1"  Grid.ColumnSpan="3" Grid.RowSpan="3"  MaxLength="1000" Margin="0,10,10,10" Style="{StaticResource TextArea}"
+                         VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"
+                         TextWrapping="Wrap" AcceptsReturn="True" Background="White"
+                         Text="{Binding MBPSample.clinicalManifestation}" />
+
+        <TextBlock Grid.Row="8" Grid.Column="0"  Text="备注："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox controls:ControlAttachProperty.Watermark ="请输入备注信息" Grid.Row="8" Grid.Column="1"  Grid.ColumnSpan="3" Grid.RowSpan="3"  MaxLength="1000" Margin="0,10,10,10" Style="{StaticResource TextArea}"
+                         VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"
+                         TextWrapping="Wrap" AcceptsReturn="True" Background="White"
+                         Text="{Binding MBPSample.remark}" />
+
+        <StackPanel Margin="0,0,20,0" Grid.Row="12" Grid.Column="3"  Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="取  消" Width="100" Style="{StaticResource CancelButton}" Margin="20,0" Command="{Binding CancelCommand}" />
+            <Button Content="保  存" Width="100" Command="{Binding SaveCommand}" />
+        </StackPanel>
+    </Grid>
+</base:BaseUserControl>

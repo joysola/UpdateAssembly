@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="DST.Controls.DatePickerEx"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+             mc:Ignorable="d" x:Name="uc"
+             d:DesignHeight="450" d:DesignWidth="650">
+    <Grid x:Name="gridMain" Margin="0" Background="Transparent">
+        <!--输入框-->
+        <TextBox x:Name="tbInput" Width="auto" IsReadOnly="True" Margin="0" TextAlignment="Center" BorderThickness="{Binding ElementName=uc, Path=BorderThickness}"
+                 Background="{Binding ElementName=uc, Path=Background}"
+                 PreviewMouseLeftButtonDown="tbInput_PreviewMouseLeftButtonDown" GotFocus="tbInput_GotFocus" />
+
+        <StackPanel x:Name="spInputSpecial" Orientation="Horizontal" Visibility="Collapsed">
+            <TextBox x:Name="tbHourSpecial" Style="{StaticResource TextBoxWithUnderlineForDatePicker}"
+                     PreviewKeyDown="TextBox_PreviewKeyDown" PreviewTextInput="TextBox_PreviewTextInput"
+                     TextChanged="TextBox_TextChanged" Tag="23" input:InputMethod.IsInputMethodEnabled="False"
+                     PreviewMouseLeftButtonDown="tbInput_PreviewMouseLeftButtonDown" PreviewMouseDoubleClick="tb_PreviewMouseDoubleClick" />
+            <TextBox x:Name="tbSplitSpecial" Style="{StaticResource TextBoxWithNoBorder}" Text="：" Foreground="#26727D"
+                                 IsReadOnly="True" />
+            <TextBox x:Name="tbMinuteSpecial" Style="{StaticResource TextBoxWithUnderlineForDatePicker}"
+                     PreviewKeyDown="TextBox_PreviewKeyDown" PreviewTextInput="TextBox_PreviewTextInput"
+                     TextChanged="TextBox_TextChanged" Tag="59" input:InputMethod.IsInputMethodEnabled="False"
+                     PreviewMouseLeftButtonDown="tbInput_PreviewMouseLeftButtonDown"
+                     PreviewMouseDoubleClick="tb_PreviewMouseDoubleClick" />
+
+            <Image x:Name="imgCancle" Height="23" Width="23" Margin="3,0,0,0" PreviewMouseLeftButtonDown="imgCancle_PreviewMouseLeftButtonDown">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Style.Setters>
+                            <!--<Setter Property="Source" Value="/DST.Controls;component/Images/X-normal.png" />-->
+                            <Setter Property="Source" Value="/DST.Controls;component/Images/X-normal.png" />
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.Setters>
+                                    <!--<Setter Property="Source" Value="/DST.Controls;component/Images/X-hover.png" />-->
+                                    <Setter Property="Source" Value="/DST.Controls;component/Images/X-hover.png" />
+                                </Trigger.Setters>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </StackPanel>
+
+        <Popup x:Name="popup" PopupAnimation="Fade" Width="auto" Height="auto" PlacementTarget="{Binding ElementName=tbInput}"
+               Placement="Bottom"  AllowsTransparency="True" StaysOpen="False" VerticalOffset="5">
+            <Border Margin="0,0,8,8" Background="White" BorderThickness="0" BorderBrush="Gray">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" Opacity="0.4" />
+                </Border.Effect>
+                <Grid x:Name="mainGrid" Margin="2" Background="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+
+                    <!--时分输入-->
+                    <StackPanel x:Name="inputControlPanel" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,2">
+                        <TextBox x:Name="tbHour" Style="{StaticResource TextBoxWithUnderlineForDatePicker}" Width="60"
+                                 PreviewKeyDown="TextBox_PreviewKeyDown" PreviewTextInput="TextBox_PreviewTextInput"
+                                 TextChanged="TextBox_TextChanged" Tag="23" FontSize="20" input:InputMethod.IsInputMethodEnabled="False"
+                                 PreviewMouseDoubleClick="tb_PreviewMouseDoubleClick" />
+                        <TextBox Style="{StaticResource TextBoxWithNoBorder}" Text="：" FontSize="26" Foreground="#26727D"
+                                 IsReadOnly="True" />
+                        <TextBox x:Name="tbMinute" Style="{StaticResource TextBoxWithUnderlineForDatePicker}" Width="60"
+                                 PreviewKeyDown="TextBox_PreviewKeyDown" PreviewTextInput="TextBox_PreviewTextInput"
+                                 TextChanged="TextBox_TextChanged" Tag="59" FontSize="20" input:InputMethod.IsInputMethodEnabled="False"
+                                 PreviewMouseDoubleClick="tb_PreviewMouseDoubleClick" />
+                        <TextBox x:Name="splitSecond" Style="{StaticResource TextBoxWithNoBorder}" Text="：" FontSize="26" Foreground="#26727D"
+                                 IsReadOnly="True" />
+                        <TextBox x:Name="tbSecond" Style="{StaticResource TextBoxWithUnderlineForDatePicker}" Width="60"
+                                 PreviewKeyDown="TextBox_PreviewKeyDown" PreviewTextInput="TextBox_PreviewTextInput"
+                                 TextChanged="TextBox_TextChanged" Tag="59" FontSize="20" input:InputMethod.IsInputMethodEnabled="False"
+                                 PreviewMouseDoubleClick="tb_PreviewMouseDoubleClick" />
+                    </StackPanel>
+
+                    <!--日历-->
+                    <Calendar x:Name="calendar" Grid.Row="1" HorizontalAlignment="Left" BorderThickness="0" Style="{StaticResource CalendarStyle}"
+                              CalendarItemStyle="{StaticResource CalendarItemStyle}" Width="250" Height="265" Focusable="False"
+                              CalendarDayButtonStyle="{StaticResource CalendarDayButtonStyle}"
+                              CalendarButtonStyle="{StaticResource CalendarButtonStyle}"
+                              SelectedDatesChanged="calendar_SelectedDatesChanged" />
+
+                    <!--按钮-->
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="btnCancel" Style="{StaticResource EllipseButtonStyleWhite}" Content="取消" Height="28" Width="70"
+                            Click="btnCancel_Click" />
+                        <Button x:Name="btnReset" Style="{StaticResource EllipseButtonStyleWhite}" Content="清空" Height="28" Width="70" Margin="13,0,0,0"
+                            Click="btnReset_Click" />
+                        <Button x:Name="btnConform" Content="确定" Height="28" Width="70" Margin="13,0,0,0"
+                            Click="btnConform_Click" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

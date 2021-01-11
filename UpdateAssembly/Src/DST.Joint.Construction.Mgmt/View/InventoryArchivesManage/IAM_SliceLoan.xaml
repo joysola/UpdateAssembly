@@ -1,0 +1,73 @@
+﻿<base:BaseUserControl x:Class="DST.Joint.Construction.Mgmt.View.IAM_SliceLoan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:DST.Joint.Construction.Mgmt.View"
+             xmlns:controls="clr-namespace:DST.Controls;assembly=DST.Controls"
+             xmlns:base="clr-namespace:DST.Controls.Base;assembly=DST.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="220*" />
+            <RowDefinition Height="70*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="150*" />
+            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="150*" />
+            <ColumnDefinition Width="120*" />
+            <ColumnDefinition Width="160*" />
+            <ColumnDefinition Width="20*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Visibility="{Binding SingleLoanVis}" Text="患者姓名："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Row="0" Grid.Column="1" Visibility="{Binding SingleLoanVis}" Text="{Binding CurSlideInfo.Patient_Name}" VerticalContentAlignment="Center" Height="30" IsEnabled="False" />
+
+        <TextBlock Grid.Row="0" Grid.Column="2" Visibility="{Binding SingleLoanVis}" Text="年龄："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Row="0" Grid.Column="3" Visibility="{Binding SingleLoanVis}" Text="{Binding CurSlideInfo.Age}" VerticalContentAlignment="Center" Height="30" IsEnabled="False" />
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Visibility="{Binding BatchLoanVis}" Text="借片数量：" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Visibility="{Binding BatchLoanVis}" Text="{Binding BatchCount}"  Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+        <TextBlock Grid.Row="1" Background="{StaticResource CommomThemeColor}" Grid.Column="0" Grid.ColumnSpan="7" Margin="5,0,5,0" />
+
+        <TextBlock Grid.Column="0" Grid.Row="2"  Text="借片机构：" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding LentSlideInfo.Org_Title}" VerticalContentAlignment="Center" Height="30" />
+
+        <TextBlock Grid.Column="2" Grid.Row="2" Text="借片人姓名："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Column="3" Grid.Row="2" Text="{Binding LentSlideInfo.Name}" VerticalContentAlignment="Center" Height="30" Margin="0" />
+
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="联系方式："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding LentSlideInfo.Telephone}" VerticalContentAlignment="Center" Height="30" />
+
+        <TextBlock Grid.Column="4" Grid.Row="2" Text="借出日期："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <controls:DatePickerPro Grid.Row="2" Grid.Column="5" StringFormat="yyyy-MM-dd" Height="35"
+                                SelectedDate="{Binding LentSlideInfo.Out_Time, StringFormat=yyyy-MM-dd, Mode=TwoWay}" />
+
+        <TextBlock Grid.Column="2" Grid.Row="3"  Text="押金：" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox Grid.Column="3" Grid.Row="3" Text="{Binding LentSlideInfo.Deposit}" VerticalContentAlignment="Center" Height="30" PreviewTextInput="TextBox_PreviewTextInput" />
+
+        <TextBlock Grid.Column="4" Grid.Row="3" Text="预期归还日期："  VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <controls:DatePickerPro Grid.Row="3" Grid.Column="5" StringFormat="yyyy-MM-dd" Height="35"
+                                SelectedDate="{Binding LentSlideInfo.Plan_Back_Time, StringFormat=yyyy-MM-dd, Mode=TwoWay}" />
+
+        <TextBlock Grid.Column="0" Grid.Row="4"  Text="说明：" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,0,0" />
+        <TextBox Grid.Column="1" Grid.Row="4"   Grid.ColumnSpan="5"  MaxLength="1000" Margin="0,10,0,0" Style="{StaticResource TextArea}"
+                         VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"
+                         TextWrapping="Wrap" AcceptsReturn="True" Background="White"
+                         Text="{Binding LentSlideInfo.Remark}" />
+
+        <StackPanel Margin="0,0,20,0" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="取  消" Width="100" Style="{StaticResource CancelButton}" Margin="20,0" Click="Cancel_Click" />
+            <Button Content="保  存" Width="100" Command="{Binding SaveCommand}" />
+        </StackPanel>
+    </Grid>
+</base:BaseUserControl>

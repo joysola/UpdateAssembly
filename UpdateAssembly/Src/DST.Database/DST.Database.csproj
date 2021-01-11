@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83F8861C-E19E-425D-9BCC-C49F2EB230FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DST.Database</RootNamespace>
+    <AssemblyName>DST.Database</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ApiClient\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=5.0.0.15, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ApiClient\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ApiClient\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>..\..\Lib\ApiClient\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ApiClient\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ApiClient\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ApiClient\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ApiClient\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ApiClient\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ApiModels_old\Interface\IQueryModel.cs" />
+    <Compile Include="Model\ApiModels_old\Interface\ISamplesModel.cs" />
+    <Compile Include="Model\ApiModels_old\BatchBackSlidesInfo.cs" />
+    <Compile Include="Model\ApiModels_old\BatchLentSlidesInfo.cs" />
+    <Compile Include="Model\ApiModels_old\DictModel\ProvinceModel.cs" />
+    <Compile Include="Model\ApiModels_old\LoginModel.cs" />
+    <Compile Include="Model\ApiModels_old\OriginSamples.cs" />
+    <Compile Include="Model\ApiModels_old\TorchSamples.cs" />
+    <Compile Include="Model\ApiModels_old\SlideAllRecords.cs" />
+    <Compile Include="Model\ApiModels_old\SlideInfo.cs" />
+    <Compile Include="Model\ApiModels_old\SlideLendOutInfo.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\OriginImgInfo.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\QueryCreateBackInfo.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\QueryCreateLendInfo.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\QueryDictInfo.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\QueryLoginInfo.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\QueryPutSlidesinStore.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\QuerySlideAllRecords.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\QuerySlideLendOutInfos.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\QuerySlides.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\QuerySlidesbyCodes.cs" />
+    <Compile Include="Model\ApiModels_old\QueryModel\TorchImgInfo.cs" />
+    <Compile Include="Model\ApiModels_old\Response\DSTApiResponse.cs" />
+    <Compile Include="Model\ExcelModel\ExcelBatchSlideCodes.cs" />
+    <Compile Include="Model\ExcelModel\ExcelSlideInfo.cs" />
+    <Compile Include="Model\ExtendContext\ExtendApiDict.cs" />
+    <Compile Include="Model\ExtendContext\ExtendAppContext.cs" />
+    <Compile Include="Model\ApiModels\Extend\MBPSampleModel.cs" />
+    <Compile Include="Model\ApiModels\QueryModel\BackMBPSample.cs" />
+    <Compile Include="Base\BaseManager.cs" />
+    <Compile Include="Base\BasePatManager.cs" />
+    <Compile Include="Manager\DictDB.cs" />
+    <Compile Include="Manager\LendOutInfoDB.cs" />
+    <Compile Include="Manager\PatientInfoDB.cs" />
+    <Compile Include="Manager\SampleGiveBackInfoDB.cs" />
+    <Compile Include="Model\ApiModels\Response\ApiResponse.cs" />
+    <Compile Include="Model\ApiModels\MBPSampleModel.cs" />
+    <Compile Include="Model\ApiModels\DictModel\DictModel.cs" />
+    <Compile Include="Model\ApiModels\HotpitalModel.cs" />
+    <Compile Include="Model\ApiModels\DictModel\ProductModel.cs" />
+    <Compile Include="Model\ApiModels\DictModel\SubmitDoctorModel.cs" />
+    <Compile Include="Model\DST_DICT.cs" />
+    <Compile Include="Model\DST_SAMPLE_GIVE_BACK_INFO.cs" />
+    <Compile Include="Model\DST_LEND_OUT_INFO.cs" />
+    <Compile Include="Model\DST_PATIENT_INFO.cs" />
+    <Compile Include="Model\ExtendContext\old\ExtendApiDict.cs" />
+    <Compile Include="Model\ExtendContext\old\ExtendAppContext.cs" />
+    <Compile Include="Model\Extend\DST_PATIENT_INFO.cs" />
+    <Compile Include="Model\ApiModels\LoginModel.cs" />
+    <Compile Include="Model\ApiModels\QueryModel\QueryLoginModel.cs" />
+    <Compile Include="Model\ApiModels\QueryModel\QueryMBPSampleList.cs" />
+    <Compile Include="Model\WPFCommonModels\CustomPageModel.cs" />
+    <Compile Include="Model\WPFCommonModels\DelegateCommonObject.cs" />
+    <Compile Include="Model\WPFCommonModels\EnumMessageKey.cs" />
+    <Compile Include="Model\WPFCommonModels\SaveResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DST.Common\DST.Common.csproj">
+      <Project>{f2f3b1d3-08f5-4d19-bf56-8b5489f7027c}</Project>
+      <Name>DST.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

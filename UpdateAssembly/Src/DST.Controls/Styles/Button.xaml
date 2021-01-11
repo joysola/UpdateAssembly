@@ -1,0 +1,243 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush Color="#FF36A5E1" x:Key="ButtonCommonBrush" />
+    <SolidColorBrush Color="#FFEAEFF2" x:Key="DisabledButtonBrush" />
+    <SolidColorBrush Color="#FFB0BCC2" x:Key="DisabledForegroundBrush" />
+
+    <Style TargetType="Button" x:Key="LoginButtonStyle">
+        <Setter Property="Height" Value="80" />
+        <Setter Property="Width" Value="425" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border TextBlock.Foreground="White" Name="Bd" CornerRadius="2" BorderThickness="1" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LocalBaseButtonStyle" TargetType="Button">
+        <Setter Property="Height" Value="40" />
+        <Setter Property="MinWidth" Value="130" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="Background" Value="{StaticResource ButtonCommonBrush}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border TextBlock.Foreground="{TemplateBinding Foreground}" Name="Bd" CornerRadius="5" BorderThickness="1" Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource DisabledButtonBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#FF397EB3" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ImageButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="WhiteButtonStyle" TargetType="Button">
+        <Setter Property="Height" Value="50" />
+        <Setter Property="MinWidth" Value="130" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Foreground" Value="#38A5E2" />
+        <Setter Property="BorderBrush" Value="#D5D5D5" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border TextBlock.Foreground="{TemplateBinding Foreground}" Name="Bd" BorderThickness="1" Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource DisabledButtonBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="HandoverButtonStyle" TargetType="Button" BasedOn="{StaticResource LocalBaseButtonStyle}">
+        <Setter Property="Width" Value="150" />
+        <Setter Property="Margin" Value="20,0,0,0" />
+    </Style>
+
+    <Style x:Key="EllipseButtonStyle" TargetType="Button">
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Width" Value="265" />
+        <Setter Property="FontSize" Value="19" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="Background" Value="{StaticResource CommomThemeColor}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border TextBlock.Foreground="{TemplateBinding Foreground}" Name="Bd" CornerRadius="10" BorderThickness="1"
+                            Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                            BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource DisabledButtonBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#FF397EB3" />
+            </Trigger>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF397EB3" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="EllipseButtonStyleWhite" TargetType="Button">
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Width" Value="265" />
+        <Setter Property="FontSize" Value="19" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="Background" Value="#FF74B6D6" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border TextBlock.Foreground="{TemplateBinding Foreground}" Name="Bd" CornerRadius="10" BorderThickness="1"
+                            Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                            BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource DisabledButtonBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#FF397EB3" />
+            </Trigger>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF397EB3" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--带下划线的超链接按钮样式-->
+    <Style x:Key="ButtonStyleWithUnline" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Transparent" TextBlock.Foreground="{TemplateBinding Foreground}" Name="Bd" CornerRadius="10" BorderThickness="0"
+                            Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}">
+                            <ContentPresenter.ContentTemplate>
+                                <DataTemplate>
+                                    <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource CommomThemeColor}" Cursor="Hand">
+                                        <TextBlock Text="{Binding}" />
+                                    </Border>
+                                </DataTemplate>
+                            </ContentPresenter.ContentTemplate>
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--带下划线的超链接按钮样式-->
+    <Style x:Key="ButtonStyleWithUnlineWhenMouseOver" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Transparent" TextBlock.Foreground="{TemplateBinding Foreground}" Name="Bd" CornerRadius="10" BorderThickness="0"
+                            Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}">
+                            <ContentPresenter.ContentTemplate>
+                                <DataTemplate>
+                                    <Border Name="border" BorderThickness="0,0,0,0" BorderBrush="{StaticResource CommomThemeColor}" Cursor="Hand">
+                                        <TextBlock Text="{Binding}" />
+                                    </Border>
+                                    <DataTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="BorderThickness" Value="0,0,0,1" />
+                                        </Trigger>
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </ContentPresenter.ContentTemplate>
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--默认按钮样式-->
+    <Style TargetType="Button" BasedOn="{StaticResource EllipseButtonStyle}" />
+
+    <Style x:Key="CancelButton" TargetType="Button" BasedOn="{StaticResource EllipseButtonStyle}">
+        <Setter Property="Foreground" Value="{StaticResource CommomThemeColor}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="{StaticResource CommomThemeColor}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="AliceBlue" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}" BasedOn="{StaticResource EllipseButtonStyle}" />
+</ResourceDictionary>
