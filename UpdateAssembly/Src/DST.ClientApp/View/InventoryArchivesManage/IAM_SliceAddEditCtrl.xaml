@@ -1,0 +1,108 @@
+﻿<base:BaseUserControl x:Class="DST.ClientApp.View.IAM_SliceAddEditCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:DST.ClientApp.View"
+             xmlns:base="clr-namespace:DST.Controls.Base;assembly=DST.Controls"
+             xmlns:cc="clr-namespace:DST.Controls.Converters;assembly=DST.Controls"
+             xmlns:controls="clr-namespace:DST.Controls;assembly=DST.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="650" d:DesignWidth="1000">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <cc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+                <cc:BoolToVisibilityReverseConverter x:Key="BoolToVisibilityReverseConverter" />
+                <cc:TestItemConverter x:Key="TestItemConverter" />
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+
+        <Button Content="{Binding StrLendOrBack}" Width="120" Command="{Binding AddCommand}"
+                HorizontalAlignment="Right" Margin="0,0,20,0" IsEnabled="{Binding BtnIsEnable}" />
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="170" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="样本编号：" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CurSlideInfo.Sample_Code}" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center" IsReadOnly="True" />
+
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="检查项目：" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding CurSlideInfo.Test_Item, Converter={StaticResource TestItemConverter}}" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center" IsReadOnly="True" />
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="患者姓名：" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CurSlideInfo.Patient_Name}" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center" IsReadOnly="True" />
+
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="年龄：" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding CurSlideInfo.Age}" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center" IsReadOnly="True" />
+
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="取样日期：" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <controls:DatePickerPro Grid.Row="1" Grid.Column="5" StringFormat="yyyy-MM-dd" Height="30" IsEnabled="False"
+                                    SelectedDate="{Binding CurSlideAllRecords.Gather_Time}" />
+
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="扫描日期：" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <controls:DatePickerPro Grid.Row="0" Grid.Column="5" StringFormat="yyyy-MM-dd" Height="30" IsEnabled="False"
+                                    SelectedDate="{Binding CurSlideAllRecords.Scan_Time}" />
+        </Grid>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding CurSlideAllRecords.Lent_History}" x:Name="giveGrid"
+                  Margin="2"  BorderBrush="#FF4994BA" Background="White" LoadingRow="GiveGrid_LoadingRow"
+                  CanUserAddRows="False" EnableRowVirtualization="False" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="60" Header="序号" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}, Path=Header}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="借片机构"  Width="70*"  Binding="{Binding Org}" />
+                <DataGridTextColumn Header="借片人"  Width="70*" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="借出时间"  Width="70*" Binding="{Binding Out_Time, StringFormat=yyyy-MM-dd}" />
+                <DataGridTextColumn Header="预计归还时间"  Width="70*"  Binding="{Binding Plan_Back_Time, StringFormat=yyyy-MM-dd}" />
+                <DataGridTextColumn Header="归还人"  Width="70*"  Binding="{Binding Back_Name}" />
+                <DataGridTextColumn Header="归还时间"  Width="70*"  Binding="{Binding Back_Time, StringFormat=yyyy-MM-dd}" />
+                <DataGridTextColumn Header="归还人联系方式"  Width="70*"  Binding="{Binding Back_Telephone}" />
+
+                <!--<DataGridTemplateColumn Header="操作" Width="0.5*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="30" Height="30" Command="{Binding DataContext.EditGiveCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding DataContext.SelectedGiveBackInfo, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <Image x:Name="img" Width="30" Height="30" HorizontalAlignment="Right" Source="/DST.ClientApp;component/Images/Edit.png" />
+                                        </Grid>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="img" Property="Source" Value="/DST.ClientApp;component/Images/Edit_Selected.png" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</base:BaseUserControl>

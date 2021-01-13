@@ -6,10 +6,14 @@
     <OutputType>Library</OutputType>
     <AssemblyName>HandyControl</AssemblyName>
     <RootNamespace>HandyControl</RootNamespace>
+    <Authors>joysola</Authors>
+    <Company>DST</Company>
+    <Product>DST.HandyControl</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
     <NoWarn>1701;1702;0067;0649;1591;MSB3061;SYSLIB0003;SYSLIB0004</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <Import Project="..\HandyControl_Shared\HandyControl_Shared.projitems" Label="Shared" />

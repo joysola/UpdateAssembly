@@ -1,0 +1,59 @@
+﻿<base:BaseUserControl x:Class="DST.ClientApp.View.MenuInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:local="clr-namespace:DST.ClientApp.View"
+             xmlns:base="clr-namespace:DST.Controls.Base;assembly=DST.Controls"
+             xmlns:cc="clr-namespace:DST.Controls.Converters;assembly=DST.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="50" d:DesignWidth="800">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <cc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Width="40" Height="40" Name="btn" Margin="20,0,0,0" ToolTip="主页" Command="{Binding HomeCommand}">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Name="img" Source="/DST.ClientApp;component/Images/Home.png" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="img" Property="Source" Value="/DST.ClientApp;component/Images/Home_Selected.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <TextBlock Grid.Column="1" Margin="20,0,0,0" Text="当前位置：" VerticalAlignment="Center" />
+
+            <Button Content="{Binding FirstMenuInfo}" Style="{StaticResource ButtonStyleWithUnlineWhenMouseOver}" Command="{Binding FirstMenuCommand}" />
+            <TextBlock Text="=>" VerticalAlignment="Center" />
+            <Button Content="{Binding SecondMenuInfo}" Style="{StaticResource ButtonStyleWithUnlineWhenMouseOver}" Command="{Binding SecondMenuCommand}" />
+            <TextBlock Text="=>" VerticalAlignment="Center" Visibility="{Binding ThirdMenuVisibility}" />
+            <Button Content="{Binding ThirdMenuInfo}" Style="{StaticResource ButtonStyleWithUnlineWhenMouseOver}" Command="{Binding ThirdMenuCommand}" />
+        </StackPanel>
+
+        <Button Grid.Column="3" Width="30" Height="30" HorizontalAlignment="Right" Margin="20,0" ToolTip="返回" Command="{Binding ReturnCommand}"
+                Visibility="{Binding IsShowReButton,Converter={StaticResource BoolToVisibilityConverter}}">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Name="img" Source="/DST.ClientApp;component/Images/Return.png" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="img" Property="Source" Value="/DST.ClientApp;component/Images/Return_Selected.png" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</base:BaseUserControl>

@@ -1,0 +1,22 @@
+﻿<base:BaseUserControl x:Class="DST.ClientApp.View.About"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:DST.ClientApp.View"
+             xmlns:base="clr-namespace:DST.Controls.Base;assembly=DST.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="400">
+    <Grid>
+        <StackPanel Orientation="Vertical" Background="AliceBlue">
+          
+        <TextBlock Text="关于........"  Width="200" Foreground="Red" />
+            <hc:DatePicker  hc:InfoElement.Placeholder="请输入"  
+                       hc:InfoElement.Title="日期" 
+                       hc:InfoElement.TitleWidth="140"
+                       hc:InfoElement.TitlePlacement="Left"></hc:DatePicker>
+        <Button Content="查看详细" />
+        </StackPanel>
+    </Grid>
+</base:BaseUserControl>

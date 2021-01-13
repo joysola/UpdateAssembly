@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7E47F25-91C4-41BF-9108-708345F33EC2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DST.ClientApp</RootNamespace>
+    <AssemblyName>DST.ClientApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\..\Lib\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="HttpClientExtension">
+      <HintPath>..\..\Lib\HttpClientEx\HttpClientExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls">
+      <HintPath>..\..\Lib\Microsoft.Expression.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>..\..\Lib\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.31\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="MoonPdfLib">
+      <HintPath>..\..\Lib\MoonPdfLib-0.3.0-x64\MoonPdfLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MouseKeyboardActivityMonitor, Version=3.0.1.29759, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\MoonPdfLib-0.3.0-x64\MouseKeyboardActivityMonitor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DictionaryConfig\DC_AddDiagnosisType.xaml.cs">
+      <DependentUpon>DC_AddDiagnosisType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DictionaryConfig\DC_AddItem.xaml.cs">
+      <DependentUpon>DC_AddItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DictionaryConfig\DictionaryConfig.xaml.cs">
+      <DependentUpon>DictionaryConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FailedScanArchives.xaml.cs">
+      <DependentUpon>FailedScanArchives.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InventoryArchivesManage\IAM_AddEditSample.xaml.cs">
+      <DependentUpon>IAM_AddEditSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InventoryArchivesManage\IAM_BatchReturn.xaml.cs">
+      <DependentUpon>IAM_BatchReturn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InventoryArchivesManage\IAM_EditArchive.xaml.cs">
+      <DependentUpon>IAM_EditArchive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InventoryArchivesManage\IAM_ImportData.xaml.cs">
+      <DependentUpon>IAM_ImportData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InventoryArchivesManage\IAM_SliceAddEditCtrl.xaml.cs">
+      <DependentUpon>IAM_SliceAddEditCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InventoryArchivesManage\IAM_SliceLoan.xaml.cs">
+      <DependentUpon>IAM_SliceLoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InventoryArchivesManage\IAM_SliceReturn.xaml.cs">
+      <DependentUpon>IAM_SliceReturn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InventoryArchivesManage\InventoryArchivesManage.xaml.cs">
+      <DependentUpon>InventoryArchivesManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainTop.xaml.cs">
+      <DependentUpon>MainTop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuInfo.xaml.cs">
+      <DependentUpon>MenuInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PathologyArchives.xaml.cs">
+      <DependentUpon>PathologyArchives.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShowPdf.xaml.cs">
+      <DependentUpon>ShowPdf.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DictionaryConfig\DC_AddDiagnosisType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DictionaryConfig\DC_AddItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DictionaryConfig\DictionaryConfig.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FailedScanArchives.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InventoryArchivesManage\IAM_AddEditSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InventoryArchivesManage\IAM_BatchReturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InventoryArchivesManage\IAM_EditArchive.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InventoryArchivesManage\IAM_ImportData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InventoryArchivesManage\IAM_SliceAddEditCtrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InventoryArchivesManage\IAM_SliceLoan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InventoryArchivesManage\IAM_SliceReturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InventoryArchivesManage\InventoryArchivesManage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MainTop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MenuInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PathologyArchives.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ShowPdf.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DST.Common\DST.Common.csproj">
+      <Project>{f2f3b1d3-08f5-4d19-bf56-8b5489f7027c}</Project>
+      <Name>DST.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DST.Controls\DST.Controls.csproj">
+      <Project>{0bc18694-7787-4c5c-967b-56beba53a9cf}</Project>
+      <Name>DST.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DST.Database\DST.Database.csproj">
+      <Project>{83f8861c-e19e-425d-9bcc-c49f2eb230fd}</Project>
+      <Name>DST.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DST.HandyControl\DST.HandyControl.csproj">
+      <Project>{a62c9a7a-1de0-4379-b42f-c4bc393564ac}</Project>
+      <Name>DST.HandyControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DST.PathologyArchivesSystem.ViewModel\DST.PathologyArchivesSystem.ViewModel.csproj">
+      <Project>{79e6f41f-23c4-442f-9211-dcf6fa0ee40a}</Project>
+      <Name>DST.PathologyArchivesSystem.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DST.TileImageViewer\DST.TileImageViewer.csproj">
+      <Project>{badef95c-39d6-4f3b-a2fc-f5e0a784531d}</Project>
+      <Name>DST.TileImageViewer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\a4z28-xygp9-001.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\a4z28-xygp9-002.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\a4z28-xygp9-003.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CloseHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeleteHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DSTlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Edit_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\EditHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Home_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\inputHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\inputNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loginButton-hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loginButton-normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loginButton-press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoginOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoginOutHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoginUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainBackground_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MinHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PreviewHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Print_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PrintHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Return_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\searchTime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\uninstall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\View_Selected.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
