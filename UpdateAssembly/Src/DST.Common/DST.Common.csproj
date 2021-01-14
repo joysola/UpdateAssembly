@@ -1,55 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2F3B1D3-08F5-4D19-BF56-8B5489F7027C}</ProjectGuid>
+    <TargetFrameworks>net461;net462;net472;</TargetFrameworks>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DST.Common</RootNamespace>
-    <AssemblyName>DST.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
@@ -79,21 +41,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="RestSharp">
       <HintPath>..\..\Lib\MinIO\RestSharp.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\ApiClient\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\ApiClient\System.Memory.dll</HintPath>
@@ -124,71 +81,16 @@
       <HintPath>..\..\Lib\ApiClient\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Attributes\ApiAttribute_old\DSTUrlAttribute.cs" />
-    <Compile Include="Attributes\ApiAttribute_old\DSTUrlParamAttribute.cs" />
-    <Compile Include="Attributes\ApiAttribute_old\DSTUrlParamAutoFillAttribute.cs" />
-    <Compile Include="Attributes\ApiAttribute_old\DSTUrlParamIgnoreAttribute.cs" />
-    <Compile Include="Converter\TypeConverter\ArrayConverter.cs" />
-    <Compile Include="Serializer\SystemText\Converters\CustomDateTimeStrConverter.cs" />
-    <Compile Include="Serializer\SystemText\Converters\StringNullableIntConverter.cs" />
-    <Compile Include="Serializer\Newton\Converters\CustomDateTimeConverter.cs" />
-    <Compile Include="Helper\WPF\BindingException.cs" />
-    <Compile Include="Helper\WPF\BindingProxy.cs" />
-    <Compile Include="Converter\TypeConverter\ConverterUtil.cs" />
-    <Compile Include="Serializer\SystemText\Converters\StringIntConverter.cs" />
-    <Compile Include="Helper\CopyObject.cs" />
-    <Compile Include="Converter\TypeConverter\DateTimeConverter.cs" />
-    <Compile Include="Converter\TypeConverter\DateTimeOffsetConverter.cs" />
-    <Compile Include="Converter\TypeConverter\DecimalConverter.cs" />
-    <Compile Include="Converter\TypeConverter\DefaultConverter.cs" />
-    <Compile Include="Converter\TypeConverter\EnumConverter.cs" />
-    <Compile Include="Converter\TypeConverter\ExactMatchConverter.cs" />
-    <Compile Include="Attributes\ExcelAttribute\ExcelColumnAttribute.cs" />
-    <Compile Include="Attributes\ExcelAttribute\ExcelModelAttribute.cs" />
-    <Compile Include="Helper\Excel\ExcelHelper.cs" />
-    <Compile Include="Extensions\TypeExtensions.cs" />
-    <Compile Include="Factory\ShowContentWindowMessageFactory.cs" />
-    <Compile Include="Converter\TypeConverter\GenericListConverter.cs" />
-    <Compile Include="Helper\Winform\GetControlsbyWinform.cs" />
-    <Compile Include="Converter\TypeConverter\GuidConverter.cs" />
-    <Compile Include="Converter\TypeConverter\HttpPostedFileConverter.cs" />
-    <Compile Include="Converter\TypeConverter\IConverter.cs" />
-    <Compile Include="Converter\TypeConverter\NullableConverter.cs" />
-    <Compile Include="Converter\TypeConverter\PinYinConverter.cs" />
-    <Compile Include="Converter\TypeConverter\PrimitiveConverter.cs" />
-    <Compile Include="Helper\WPF\SelectorControlHelper.cs" />
-    <Compile Include="Helper\MinIO\MinioHelper.cs" />
-    <Compile Include="Helper\MinIO\MinioLogHelper.cs" />
-    <Compile Include="Serializer\SystemText\NamingPolicy\LowerCaseNamingPolicy.cs" />
-    <Compile Include="Converter\TypeConverter\StringConverter.cs" />
-    <Compile Include="Helper\String\StringHelper.cs" />
-    <Compile Include="Helper\String\StringManage.cs" />
-    <Compile Include="Helper\File\TiffHelper.cs" />
-    <Compile Include="Converter\TypeConverter\TypeConverterAdapter.cs" />
-    <Compile Include="Converter\TypeConverter\TypeConverterBase.cs" />
-    <Compile Include="Helper\WPF\VisualTreeFinder.cs" />
-    <Compile Include="Logger\Logger.cs" />
-    <Compile Include="Helper\File\FileHelper.cs" />
-    <Compile Include="Helper\Sundries.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WindowsAPI\WindowsAPI.cs" />
-    <Compile Include="Helper\Zip\ZipHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Exception\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Remove="Exception\ApiException.cs" />
+    <Compile Remove="Extensions\ApiExtensions\DSTUrlExtension.cs" />
+  </ItemGroup>
 </Project>
