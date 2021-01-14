@@ -76,8 +76,8 @@
         <Setter Property="local:ControlAttachProperty.FocusBackground" Value="{StaticResource FocusBackground}" />
         <Setter Property="local:ControlAttachProperty.FocusBorderBrush" Value="{StaticResource FocusBorderBrush}" />
         <Setter Property="local:ControlAttachProperty.MouseOverBorderBrush" Value="{StaticResource MouseOverBorderBrush}" />
-        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily_Ctl}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Ctl}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItemStyle}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="MaxDropDownHeight" Value="400" />
@@ -218,6 +218,7 @@
         </Setter>
     </Style>
 
+    <!--默认配置-joysola-->
     <Style BasedOn="{StaticResource NormalComboBoxStyle}" TargetType="ComboBox" />
 
     <Style BasedOn="{StaticResource NormalComboBoxStyle}" TargetType="{x:Type local:ComboBoxEx}" />
@@ -421,12 +422,12 @@
                 <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
                 <Setter Property="IsTabStop" Value="false" />
                 <Setter Property="Padding" Value="3" />
-                <Setter Property="Template" Value="{StaticResource ComboBoxEditableTemplate}" />
+                <Setter Property="Template" Value="{StaticResource ComboBoxEditableTemplate_Ctl}" />
             </Trigger>
         </Style.Triggers>
     </Style>
 
-    <ControlTemplate x:Key="ComboBoxEditableTemplate" TargetType="{x:Type ComboBox}">
+    <ControlTemplate x:Key="ComboBoxEditableTemplate_Ctl" TargetType="{x:Type ComboBox}">
         <Grid x:Name="Placement" SnapsToDevicePixels="true">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

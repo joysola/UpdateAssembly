@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style x:Key="CalendarStyle" TargetType="{x:Type Calendar}">
-        <Setter Property="CalendarButtonStyle" Value="{StaticResource CalendarButtonStyle}" />
+    <Style x:Key="CalendarStyle_Ctl" TargetType="{x:Type Calendar}">
+        <Setter Property="CalendarButtonStyle" Value="{StaticResource CalendarButtonStyle_Ctl}" />
         <!--日历控件的背景色,也可以改成绑定的-->
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Template">
@@ -26,7 +26,7 @@
     </Style>
 
     <!--日历主体样式表-->
-    <Style x:Key="CalendarItemStyle" TargetType="{x:Type CalendarItem}">
+    <Style x:Key="CalendarItemStyle_Ctl" TargetType="{x:Type CalendarItem}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CalendarItem}">
@@ -193,7 +193,7 @@
     </Style>
 
     <!--单个几号几号按钮的样式模版-->
-    <Style x:Key="CalendarDayButtonStyle" TargetType="{x:Type CalendarDayButton}">
+    <Style x:Key="CalendarDayButtonStyle_Ctl" TargetType="{x:Type CalendarDayButton}">
         <Setter Property="Margin"  Value="1" />
         <Setter Property="MinWidth" Value="5" />
         <Setter Property="MinHeight" Value="5" />
@@ -297,7 +297,7 @@
     </Style>
 
     <!--月 年按钮的样式-->
-    <Style x:Key="CalendarButtonStyle" TargetType="{x:Type CalendarButton}">
+    <Style x:Key="CalendarButtonStyle_Ctl" TargetType="{x:Type CalendarButton}">
         <Setter Property="Background" Value="{StaticResource CommomThemeColor}" />
         <Setter Property="MinWidth" Value="25" />
         <Setter Property="MinHeight" Value="25" />

@@ -6580,14 +6580,14 @@
 			</Border>
 		</hc:SimplePanel>
 		<ControlTemplate.Triggers>
-			<EventTrigger RoutedEvent="hc:Badge.ValueChanged">
+			<!--<EventTrigger RoutedEvent="hc:Badge.ValueChanged">
 				<BeginStoryboard>
 					<Storyboard AutoReverse="True">
 						<DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="0" Duration="0:0:.1" From="1" To="1.2" EasingFunction="{StaticResource SineEaseOut}" />
 						<DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="0" Duration="0:0:.1" From="1" To="1.2" EasingFunction="{StaticResource SineEaseOut}" />
 					</Storyboard>
 				</BeginStoryboard>
-			</EventTrigger>
+			</EventTrigger>-->
 		</ControlTemplate.Triggers>
 	</ControlTemplate>
 	<ControlTemplate x:Key="BadgeProcessingTemplate" TargetType="hc:Badge">

@@ -93,7 +93,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="FocusVisual">
+    <Style x:Key="FocusVisual_Ctl">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>

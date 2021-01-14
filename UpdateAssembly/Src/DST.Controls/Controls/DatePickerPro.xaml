@@ -116,10 +116,10 @@
 
                     <!--日历 Height:auto自动设置（原来265）-->
                     <Calendar x:Name="calendar" Grid.Row="1" HorizontalAlignment="Left" BorderThickness="0" Width="250" Height="auto" Focusable="True"
-                              Style="{StaticResource CalendarStyle}"
-                              CalendarItemStyle="{StaticResource CalendarItemStyle}"
-                              CalendarDayButtonStyle="{StaticResource CalendarDayButtonStyle}"
-                              CalendarButtonStyle="{StaticResource CalendarButtonStyle}"
+                              Style="{StaticResource CalendarStyle_Ctl}"
+                              CalendarItemStyle="{StaticResource CalendarItemStyle_Ctl}"
+                              CalendarDayButtonStyle="{StaticResource CalendarDayButtonStyle_Ctl}"
+                              CalendarButtonStyle="{StaticResource CalendarButtonStyle_Ctl}"
                               SelectedDatesChanged="calendar_SelectedDatesChanged" />
                     <!--按钮-->
                     <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="Collapsed">

@@ -7,8 +7,17 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="View\DictionaryConfig\**" />
+    <EmbeddedResource Remove="View\DictionaryConfig\**" />
+    <None Remove="View\DictionaryConfig\**" />
+    <Page Remove="View\DictionaryConfig\**" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight">
       <HintPath>..\..\Lib\GalaSoft.MvvmLight.dll</HintPath>
@@ -32,7 +41,7 @@
       <HintPath>..\..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="MoonPdfLib">
-      <HintPath>..\..\Lib\MoonPdfLib-0.3.0-x64\MoonPdfLib.dll</HintPath>
+      <HintPath>..\..\Lib\MoonPdfLib.dll</HintPath>
     </Reference>
     <Reference Include="MouseKeyboardActivityMonitor, Version=3.0.1.29759, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -167,5 +176,18 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

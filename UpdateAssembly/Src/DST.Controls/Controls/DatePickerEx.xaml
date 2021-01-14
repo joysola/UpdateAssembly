@@ -79,10 +79,10 @@
                     </StackPanel>
 
                     <!--日历-->
-                    <Calendar x:Name="calendar" Grid.Row="1" HorizontalAlignment="Left" BorderThickness="0" Style="{StaticResource CalendarStyle}"
-                              CalendarItemStyle="{StaticResource CalendarItemStyle}" Width="250" Height="265" Focusable="False"
-                              CalendarDayButtonStyle="{StaticResource CalendarDayButtonStyle}"
-                              CalendarButtonStyle="{StaticResource CalendarButtonStyle}"
+                    <Calendar x:Name="calendar" Grid.Row="1" HorizontalAlignment="Left" BorderThickness="0" Style="{StaticResource CalendarStyle_Ctl}"
+                              CalendarItemStyle="{StaticResource CalendarItemStyle_Ctl}" Width="250" Height="265" Focusable="False"
+                              CalendarDayButtonStyle="{StaticResource CalendarDayButtonStyle_Ctl}"
+                              CalendarButtonStyle="{StaticResource CalendarButtonStyle_Ctl}"
                               SelectedDatesChanged="calendar_SelectedDatesChanged" />
 
                     <!--按钮-->

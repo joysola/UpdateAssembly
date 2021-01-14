@@ -7,7 +7,7 @@
     <SolidColorBrush x:Key="DisableBrush" Color="#FF7C909A" />
     <SolidColorBrush x:Key="TextBrush" Color="#FF3A4D57" />
     <SolidColorBrush x:Key="ColumnHeaderTextBrush" Color="#E49A3A" />
-    <SolidColorBrush x:Key="BackgroundBrush" Color="#FFF4F7F9" />
+    <SolidColorBrush x:Key="BackgroundBrush_Ctl" Color="#FFF4F7F9" />
     <SolidColorBrush x:Key="BlueBrush" Color="#FF36A5E1" />
     <SolidColorBrush x:Key="CommonBorderBrush" Color="#FFCDCBCC" />
     <SolidColorBrush x:Key="EnableBrush" Color="White" />
@@ -81,11 +81,11 @@
     <SolidColorBrush x:Key="SuccessfulfaiBrush" Color="#16B32A"></SolidColorBrush>
     <SolidColorBrush x:Key="FailedBrush" Color="#B92222"></SolidColorBrush>
 
-    <FontFamily x:Key="FontFamily" >Microsoft YaHei</FontFamily>
-    <sys:Double x:Key="FontSize">15</sys:Double>
+    <FontFamily x:Key="FontFamily_Ctl" >Microsoft YaHei</FontFamily>
+    <sys:Double x:Key="FontSize_Ctl">15</sys:Double>
     <sys:Double x:Key="DisableOpacity">0.5</sys:Double>
     <sys:Double x:Key="ReadonlyOpacity">0.88</sys:Double>
     <sys:Double x:Key="WatermarkOpacity">0.4</sys:Double>
     <sys:String x:Key="DateFormat">yyyy年MM月dd日</sys:String>
-    <sys:String x:Key="DateTimeFormat">yyyy-MM-dd HH:mm:ss</sys:String>
+    <sys:String x:Key="DateTimeFormat_Ctl">yyyy-MM-dd HH:mm:ss</sys:String>
 </ResourceDictionary>

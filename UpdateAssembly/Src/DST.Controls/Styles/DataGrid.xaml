@@ -3,7 +3,7 @@
                     x:Class="DST.Controls.DataGridStyle">
 
     <!-- CommonDataGridWithoutLineStyle -->
-    <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
+    <Style x:Key="ColumnHeaderGripperStyle_Ctl" TargetType="{x:Type Thumb}">
         <Setter Property="Width" Value="1" />
         <Setter Property="Background" Value="#FF1D7BAA" />
         <Setter Property="Cursor" Value="SizeWE" />
@@ -18,7 +18,7 @@
 
     <Style x:Key="CommonDataGridColumnHeaderWithoutLineStyle" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="MinHeight" Value="40" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Ctl}" />
         <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -27,8 +27,8 @@
                 <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
                     <Grid>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        <Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" Style="{StaticResource ColumnHeaderGripperStyle}" />
-                        <Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        <Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" Style="{StaticResource ColumnHeaderGripperStyle_Ctl}" />
+                        <Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle_Ctl}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -89,7 +89,7 @@
     <Style x:Key="CommonDataGridCellStyle" TargetType="{x:Type DataGridCell}">
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Ctl}" />
         <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -234,7 +234,7 @@
 
     <Style x:Key="CommonDataGridColumnHeaderWithLineStyle" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="MinHeight" Value="40" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Ctl}" />
         <Setter Property="FontWeight" Value="Bold" />
         <!--标题栏的字体颜色-->
         <Setter Property="Foreground" Value="{StaticResource ColumnHeaderTextBrush}" />
@@ -248,8 +248,8 @@
                                           RecognizesAccessKey="True"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        <Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" Style="{StaticResource ColumnHeaderGripperStyle}" />
-                        <Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        <Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" Style="{StaticResource ColumnHeaderGripperStyle_Ctl}" />
+                        <Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle_Ctl}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -440,7 +440,7 @@
     <Style x:Key="CommonDataGridCellStyleBlack" TargetType="{x:Type DataGridCell}">
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Ctl}" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -473,7 +473,7 @@
 
     <Style x:Key="CommonDataGridColumnHeaderWithLineStyleBlack" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="MinHeight" Value="40" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Ctl}" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -484,8 +484,8 @@
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        <Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" Style="{StaticResource ColumnHeaderGripperStyle}" />
-                        <Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        <Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" Style="{StaticResource ColumnHeaderGripperStyle_Ctl}" />
+                        <Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle_Ctl}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -625,6 +625,9 @@
     </Style>
     <!-- CommonDataGridWithLineStyle Black -->
 
+    <!--默认配置-joysola-->
     <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource CommonDataGridWithLineStyle}"></Style>
+    
+    
     <!--<Style TargetType="{x:Type controls:DynamicDataGrid}" BasedOn="{StaticResource CommonDataGridWithLineStyle}"></Style>-->
 </ResourceDictionary>

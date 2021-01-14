@@ -172,7 +172,7 @@
     </Style>
 
     <!--垂直滚动条模板样式-->
-    <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
+    <ControlTemplate x:Key="VerticalScrollBar_Ctl" TargetType="{x:Type ScrollBar}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="18" />
@@ -216,7 +216,7 @@
     </ControlTemplate>
 
     <!--水平滚动条样式-->
-    <ControlTemplate x:Key="HorizontalScrollBar" TargetType="{x:Type ScrollBar}">
+    <ControlTemplate x:Key="HorizontalScrollBar_Ctl" TargetType="{x:Type ScrollBar}">
         <Grid Background="White">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MaxWidth="18"></ColumnDefinition>
@@ -257,7 +257,7 @@
         </Grid>
     </ControlTemplate>
 
-    <!--全局滚动条样式-->
+    <!--全局滚动条样式-joysola-->
     <Style TargetType="{x:Type ScrollBar}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
@@ -266,14 +266,14 @@
             <Trigger Property="Orientation" Value="Vertical">
                 <Setter Property="Width" Value="12" />
                 <Setter Property="Height" Value="Auto" />
-                <Setter Property="Template" Value="{StaticResource VerticalScrollBar}" />
+                <Setter Property="Template" Value="{StaticResource VerticalScrollBar_Ctl}" />
             </Trigger>
 
             <!--水平滚动条-->
             <Trigger Property="Orientation" Value="Horizontal">
                 <Setter Property="Width" Value="Auto" />
                 <Setter Property="Height" Value="12" />
-                <Setter Property="Template" Value="{StaticResource HorizontalScrollBar}" />
+                <Setter Property="Template" Value="{StaticResource HorizontalScrollBar_Ctl}" />
             </Trigger>
         </Style.Triggers>
     </Style>

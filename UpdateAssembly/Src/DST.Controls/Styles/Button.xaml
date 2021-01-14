@@ -225,7 +225,7 @@
         </Setter>
     </Style>
 
-    <!--默认按钮样式-->
+    <!--默认按钮样式-joysola-->
     <Style TargetType="Button" BasedOn="{StaticResource EllipseButtonStyle}" />
 
     <Style x:Key="CancelButton" TargetType="Button" BasedOn="{StaticResource EllipseButtonStyle}">
@@ -239,5 +239,5 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}" BasedOn="{StaticResource EllipseButtonStyle}" />
+    
 </ResourceDictionary>

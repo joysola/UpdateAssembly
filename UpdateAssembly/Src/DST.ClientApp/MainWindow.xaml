@@ -47,6 +47,7 @@
 
                 <!--右侧主界面-->
                 <StackPanel Grid.Row="1" Name="gridMainFun">
+                    <hc:DatePicker></hc:DatePicker>
                     <local:ShowPdf x:Name="showPdf" />
                 </StackPanel>
             </Grid>

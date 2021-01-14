@@ -76,8 +76,8 @@
         <Setter Property="Foreground" Value="{StaticResource TextForeground}" />
         <Setter Property="ContextMenu" Value="{DynamicResource TextBoxContextMenu}" />
         <Setter Property="SelectionBrush" Value="{StaticResource TextSelectionBrush}" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize}"></Setter>
-        <Setter Property="FontFamily" Value="{StaticResource FontFamily}"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Ctl}"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily_Ctl}"></Setter>
         <Setter Property="Focusable" Value="True" />
         <Setter Property="CaretBrush" Value="{StaticResource TextForeground}" />
         <Setter Property="VerticalAlignment" Value="Center" />

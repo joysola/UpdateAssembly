@@ -2,19 +2,19 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:localcore="clr-namespace:DST.Controls">
 
-    <!--TextBox默认样式-->
+    <!--TextBox默认样式-joysola-->
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="ContextMenu" Value="{DynamicResource TextBoxContextMenu}" />
         <Setter Property="SelectionBrush" Value="{StaticResource TextSelectionBrush}" />
-        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily_Ctl}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Ctl}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Height" Value="35" />
-        <!--<Setter Property="Width" Value="120" />-->
+        <Setter Property="Width" Value="120" />
         <Setter Property="Background" Value="{StaticResource TextBackground}" />
         <Setter Property="Foreground" Value="{StaticResource TextForeground}" />
         <Setter Property="Padding" Value="0" />
-        <!--<Setter Property="Margin" Value="10,0,0,0" />ControlBorderBrush-->
+        <Setter Property="Margin" Value="10,0,0,0" /><!--ControlBorderBrush-->
         <Setter Property="BorderBrush" Value="{StaticResource CommomThemeColor}" />
         <Setter Property="localcore:ControlAttachProperty.FocusBorderBrush" Value="{StaticResource FocusBorderBrush}" />
         <Setter Property="localcore:ControlAttachProperty.MouseOverBorderBrush" Value="{StaticResource MouseOverBorderBrush}" />
@@ -88,8 +88,8 @@
         <Setter Property="AcceptsReturn" Value="True" />
         <Setter Property="TextAlignment" Value="Left" />
         <Setter Property="SelectionBrush" Value="{StaticResource TextSelectionBrush}" />
-        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily_Ctl}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Ctl}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Height" Value="auto" />
         <Setter Property="Width" Value="auto" />

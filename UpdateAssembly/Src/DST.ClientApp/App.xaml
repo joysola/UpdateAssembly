@@ -6,10 +6,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/DST.Controls;component/Styles/Colors.xaml" />
-                <ResourceDictionary Source="/DST.Controls;component/Styles/AppResourceDictionary.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
+                <!--<ResourceDictionary Source="/DST.Controls;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="/DST.Controls;component/Styles/AppResourceDictionary.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
