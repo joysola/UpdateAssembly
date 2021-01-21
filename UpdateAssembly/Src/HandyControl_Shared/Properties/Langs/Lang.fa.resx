@@ -192,12 +192,6 @@
   <data name="FormatError" xml:space="preserve">
     <value>فرمت ورودی اشتباه است</value>
   </data>
-  <data name="CannotRegisterCompositeCommandInItself" xml:space="preserve">
-    <value>نمی توان فرمان کامپوزیت را در خود ثبت کرد</value>
-  </data>
-  <data name="CannotRegisterSameCommandTwice" xml:space="preserve">
-    <value>نمی توان همان فرمان را دو بار ثبت کرد</value>
-  </data>
   <data name="Yes" xml:space="preserve">
     <value>بله</value>
   </data>
@@ -239,5 +233,8 @@
   </data>
   <data name="All" xml:space="preserve">
     <value>All</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>No Data</value>
   </data>
 </root>

@@ -192,12 +192,6 @@
   <data name="FormatError" xml:space="preserve">
     <value>format error</value>
   </data>
-  <data name="CannotRegisterCompositeCommandInItself" xml:space="preserve">
-    <value>Cannot Register Composite Command In It self</value>
-  </data>
-  <data name="CannotRegisterSameCommandTwice" xml:space="preserve">
-    <value>Cannot Register Same Command Twice</value>
-  </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
   </data>
@@ -239,5 +233,8 @@
   </data>
   <data name="All" xml:space="preserve">
     <value>All</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>No Data</value>
   </data>
 </root>

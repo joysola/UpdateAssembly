@@ -39,6 +39,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\DashedBorder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\Divider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\Drawer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\Empty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\Magnifier.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Button\ButtonGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\Card.cs" />
@@ -125,6 +126,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Media\Effects\ContrastEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Media\Effects\EffectBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Media\Effects\GrayScaleEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.Designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\Langs\LangProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Themes\SharedResourceDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Themes\Theme.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Converter\BorderCircularClipConverter.cs" />
@@ -400,12 +404,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\StyleSelector\TabItemCapsuleStyleSelector.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Properties\Langs\LangProvider.tt" />
     <None Include="$(MSBuildThisFileDirectory)Themes\Basic\Behaviors.xaml">
       <SubType>Designer</SubType>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Themes\Basic\Brushes.xaml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Themes\XamlCombine.exe" />
     <Page Include="$(MSBuildThisFileDirectory)Themes\Basic\Colors\Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -790,9 +796,6 @@
     <None Include="$(MSBuildThisFileDirectory)Themes\Styles\GroupBox.xaml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Themes\Styles\Image.xaml">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="$(MSBuildThisFileDirectory)Themes\Styles\ImageViewer.xaml">
       <SubType>Designer</SubType>
     </None>
@@ -919,6 +922,12 @@
     <None Include="$(MSBuildThisFileDirectory)Themes\Styles\Window.xaml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Themes\Styles\Base\EmptyBaseStyle.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Themes\Styles\Empty.xaml">
+      <SubType>Designer</SubType>
+    </None>
     <Page Include="$(MSBuildThisFileDirectory)Themes\Theme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -936,6 +945,16 @@
     <Folder Include="$(MSBuildThisFileDirectory)Tools\Interop\Handle\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.ca-ES.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.en.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.fa.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.fr.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.ko-KR.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.pl.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.pt-BR.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.ru.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.tr.resx" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.AnimationPath.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Expression.Shapes.Arc.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.Badge.icon.bmp" />
@@ -1004,5 +1023,9 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.Watermark.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.WatermarkTextBox.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.WaveProgressBar.icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Themes\Theme_40.txt" />
+    <None Include="$(MSBuildThisFileDirectory)Themes\Theme_GE45.txt" />
   </ItemGroup>
 </Project>

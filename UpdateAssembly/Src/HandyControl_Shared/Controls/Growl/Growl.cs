@@ -12,7 +12,6 @@ using HandyControl.Properties.Langs;
 using HandyControl.Tools;
 using HandyControl.Tools.Extension;
 
-
 namespace HandyControl.Controls
 {
     /// <summary>
@@ -322,6 +321,8 @@ namespace HandyControl.Controls
 
         private void Update()
         {
+            if (DesignerHelper.IsInDesignMode) return;
+
             if (Type == InfoType.Ask)
             {
                 _panelMore.IsEnabled = true;

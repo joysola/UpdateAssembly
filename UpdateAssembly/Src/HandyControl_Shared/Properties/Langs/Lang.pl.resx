@@ -118,126 +118,120 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirmer</value>
+    <value>Akceptuj</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Annuler</value>
+    <value>Anuluj</value>
   </data>
   <data name="PngImg" xml:space="preserve">
-    <value>Image PNG</value>
+    <value>obraz PNG</value>
   </data>
   <data name="ErrorImgPath" xml:space="preserve">
-    <value>Chemin d'image incorrect</value>
+    <value>Ścieżka do obrazu jest niepoprawna</value>
   </data>
   <data name="ErrorImgSize" xml:space="preserve">
-    <value>Taille d'image incorrect</value>
+    <value>Wielkość obrazu jest niepoprawna</value>
   </data>
   <data name="UnknownSize" xml:space="preserve">
-    <value>Taille inconnue</value>
+    <value>Nieznany obraz</value>
   </data>
   <data name="TooLarge" xml:space="preserve">
-    <value>Trop large</value>
+    <value>Za duże</value>
   </data>
   <data name="Unknown" xml:space="preserve">
-    <value>Inconnu</value>
+    <value>Nieznany</value>
   </data>
   <data name="Interval30s" xml:space="preserve">
-    <value>Intervale de 30 secondes</value>
+    <value>30 sekundowy interwał</value>
   </data>
   <data name="Interval1m" xml:space="preserve">
-    <value>Intervale de de 1 minute</value>
+    <value>1 minutowy interwał</value>
   </data>
   <data name="Interval5m" xml:space="preserve">
-    <value>Intervale de 5 minutes</value>
+    <value>5 minutowy interwał</value>
   </data>
   <data name="Interval10m" xml:space="preserve">
-    <value>Intervale de 10 minutes</value>
+    <value>10 minutowy interwał</value>
   </data>
   <data name="Interval30m" xml:space="preserve">
-    <value>Intervale de 30 minutes</value>
+    <value>30 minutowy interwał</value>
   </data>
   <data name="Interval1h" xml:space="preserve">
-    <value>Intervale de 1 heure</value>
+    <value>1 godzinny interwał</value>
   </data>
   <data name="Interval2h" xml:space="preserve">
-    <value>Intervale de 2 heures</value>
+    <value>2 godzinny interwał</value>
   </data>
   <data name="Clear" xml:space="preserve">
-    <value>Effacer</value>
+    <value>Wyczyść</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Fermer</value>
+    <value>Zamknij</value>
   </data>
   <data name="CloseAll" xml:space="preserve">
-    <value>Fermer tout</value>
+    <value>Zamknij wszystkie</value>
   </data>
   <data name="CloseOther" xml:space="preserve">
-    <value>Fermer les autres</value>
+    <value>Zamknij inne</value>
   </data>
   <data name="Am" xml:space="preserve">
-    <value>Am</value>
+    <value>AM</value>
   </data>
   <data name="Pm" xml:space="preserve">
-    <value>Pm</value>
+    <value>PM</value>
   </data>
   <data name="Tip" xml:space="preserve">
-    <value>Prompt</value>
+    <value>Podpowiedź</value>
   </data>
   <data name="IsNecessary" xml:space="preserve">
-    <value>Ne peut pas être vide</value>
+    <value>nie może być pusty</value>
   </data>
   <data name="OutOfRange" xml:space="preserve">
-    <value>En dehors des limites</value>
+    <value>poza zakresem</value>
   </data>
   <data name="FormatError" xml:space="preserve">
-    <value>Erreur de format</value>
-  </data>
-  <data name="CannotRegisterCompositeCommandInItself" xml:space="preserve">
-    <value>Impossible d'enregistrer une commande composite dans elle-même</value>
-  </data>
-  <data name="CannotRegisterSameCommandTwice" xml:space="preserve">
-    <value>Impossible d'enregistrer la même commande deux fois</value>
+    <value>błąd formatu</value>
   </data>
   <data name="Yes" xml:space="preserve">
-    <value>Oui</value>
+    <value>Tak</value>
   </data>
   <data name="No" xml:space="preserve">
-    <value>Non</value>
+    <value>Nie</value>
   </data>
   <data name="ZoomIn" xml:space="preserve">
-    <value>Zoom in</value>
+    <value>Oddal</value>
   </data>
   <data name="ZoomOut" xml:space="preserve">
-    <value>Zoom out</value>
+    <value>Przybliż</value>
   </data>
   <data name="PreviousPage" xml:space="preserve">
-    <value>Previous page</value>
+    <value>Poprzednia strona</value>
   </data>
   <data name="NextPage" xml:space="preserve">
-    <value>Next page</value>
+    <value>Następna strona</value>
   </data>
   <data name="PageMode" xml:space="preserve">
-    <value>Page mode</value>
+    <value>Tryb strony</value>
   </data>
   <data name="TwoPageMode" xml:space="preserve">
-    <value>Two page mode</value>
+    <value>Tryb dwustronny</value>
   </data>
   <data name="ScrollMode" xml:space="preserve">
-    <value>Scroll mode</value>
+    <value>Tryb przewijania</value>
   </data>
   <data name="Find" xml:space="preserve">
-    <value>Find</value>
+    <value>Znajdź</value>
   </data>
   <data name="LangComment" xml:space="preserve">
-    <value>Looks up a localized string similar to "{0}".</value>
+    <value>Wyszukuje zlokalizowany ciąg podobny do „{0}”.</value>
   </data>
   <data name="Jump" xml:space="preserve">
-    <value>Jump</value>
+    <value>Skocz</value>
   </data>
   <data name="Miscellaneous" xml:space="preserve">
-    <value>Miscellaneous</value>
+    <value>Różne</value>
   </data>
   <data name="All" xml:space="preserve">
-    <value>All</value>
+    <value>Wszystkie</value>
   </data>
 </root>
