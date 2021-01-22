@@ -126,9 +126,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Media\Effects\ContrastEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Media\Effects\EffectBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Media\Effects\GrayScaleEffect.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.Designer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Properties\Langs\LangProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Themes\SharedResourceDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Themes\Theme.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Converter\BorderCircularClipConverter.cs" />
@@ -404,7 +401,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\StyleSelector\TabItemCapsuleStyleSelector.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Properties\Langs\LangProvider.tt" />
     <None Include="$(MSBuildThisFileDirectory)Themes\Basic\Behaviors.xaml">
       <SubType>Designer</SubType>
     </None>
@@ -945,16 +941,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Tools\Interop\Handle\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.ca-ES.resx" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.en.resx" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.fa.resx" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.fr.resx" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.ko-KR.resx" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.pl.resx" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.pt-BR.resx" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.resx" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.ru.resx" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Properties\Langs\Lang.tr.resx" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.AnimationPath.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Expression.Shapes.Arc.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.Badge.icon.bmp" />
