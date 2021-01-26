@@ -95,7 +95,7 @@ namespace DST.Joint.Construction.Mgmt.ViewModel
         public LoginViewModel()
         {
             //this.InitAllDictList();
-            //new TestViewModel();
+            new TestViewModel();
         }
 
         /// <summary>

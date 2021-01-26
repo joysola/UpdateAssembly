@@ -60,7 +60,66 @@ namespace DST.ApiClient.Service
             var result = await GetDict(code).ConfigureAwait(false);
             return result;
         }
-
+        /// <summary>
+        /// 获取活检字典（0 无活检、1 有活检）
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<DictItem>> GetBiopsyFlagDict()
+        {
+            string code = "biopsyFlagList";
+            var result = await GetDict(code).ConfigureAwait(false);
+            return result;
+        }
+        /// <summary>
+        /// 获取HPV结果字典（0 阴性、1 阳性）
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<DictItem>> GetHPVResultDict()
+        {
+            string code = "HPVResultList";
+            var result = await GetDict(code).ConfigureAwait(false);
+            return result;
+        }
+        /// <summary>
+        /// 获取腺上皮细胞分析结果字典（-1 无、0 未见腺上皮内病变及恶性病变、1 非典型腺细胞（无指定）、2 原位腺癌 、3 非典型腺细胞（倾向瘤变）、4 腺癌）
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<DictItem>> GetGlandularEpithelialCellResultDict()
+        {
+            string code = "glandularEpithelialCellResult";
+            var result = await GetDict(code).ConfigureAwait(false);
+            return result;
+        }
+        /// <summary>
+        /// 获取样本TCT诊断结果字典（0 未见上皮内病变及恶性病变（NILM)、1 非典型鳞状上皮细胞，无明确诊断意义（ASC-US)、2 非典型鳞状上皮细胞，不除外高度病变（ASC-H)、3 低度鳞状上皮内病变（LSIL)、4 高度鳞状上皮内病变（H-SIL)、5 鳞状细胞癌）
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<DictItem>> GetSampleTctResultDict()
+        {
+            string code = "sampleTctResult";
+            var result = await GetDict(code).ConfigureAwait(false);
+            return result;
+        }
+        /// <summary>
+        /// 获取样本标记状态字典（0 待发送、1 已发送、2 待标记、3 已完成）
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<DictItem>> GetSampleSignStatusDict()
+        {
+            string code = "sampleSignStatusList";
+            var result = await GetDict(code).ConfigureAwait(false);
+            return result;
+        }
+        /// <summary>
+        /// 获取标记结果字典（1_1 ASC-US、1_2 ASC-H、1_3 LSIL、1_4 HSIL、1_5 gandular、1_6 glandular-adace、1_7 atrophy、1_8 repair、1_9 metaplastic）
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<DictItem>> GetSignResultDict()
+        {
+            string code = "signResultList";
+            var result = await GetDict(code).ConfigureAwait(false);
+            return result;
+        }
         /// <summary>
         /// 获取共建病理科医院信息
         /// </summary>
