@@ -33,5 +33,23 @@ namespace DST.ApiClient.Api
         [HttpGet]
         [Url("api/deepsight-tag/tag/tag-vision-block/getTagVisionBlockFinishProportion")]
         public ApiResponse<MVFinishRatioInfo> GetBlockFinishProportionfromMarkingView() => GetResult();
+        /// <summary>
+        /// 修改标记、新增标记（id为空即可）
+        /// 调用结束后需要调用QueryBlockDetailofMarkingView
+        /// (成功200 data 1、失败500 data null)
+        /// </summary>
+        /// <param name="markingInfo">标记实体</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Url("api/deepsight-tag/tag/tag-doctor-cell/saveTagCellDoctor")]
+        public ApiResponse<int?> SaveMarkingbyDoctor([PostContent] MVMarkingInfo markingInfo) => GetResult();
+        /// <summary>
+        /// 提交该任务的标记信息
+        /// </summary>
+        /// <param name="blockId">任务id</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Url("api/deepsight-tag/tag/tag-vision-block/subMitVisionBlock")]
+        public ApiResponse<int?> SubmitMarkingsofBlock(string blockId) => GetResult();
     }
 }
