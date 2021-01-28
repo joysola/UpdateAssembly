@@ -83,18 +83,18 @@ namespace DST.Joint.Construction.Mgmt.ViewModel
             var t4 = DictService.Instance.GetSampleTctResultDict();
             var t5 = DictService.Instance.GetSampleSignStatusDict();
             var t6 = DictService.Instance.GetSignResultDict();
-            Task.WhenAll(t1, t2, t3, t4, t5, t6).ConfigureAwait(false).GetAwaiter().GetResult();
-
+            //var h1 = DictService.Instance.GetHotpitalInfo();
+            Task.WhenAll(t1, t2, t3, t4, t5, t6/*, h1*/).ConfigureAwait(false).GetAwaiter().GetResult();
             var m1 = MarkingSystemApi.Client.QueryBlockDetailofMarkingView();
             var m2 = MarkingSystemApi.Client.QueryBlockIndexListofMarkingView();
             var m3 = MarkingSystemApi.Client.QueryBlockDetailofMarkingView("1344569693381464068");
             var m4 = MarkingSystemApi.Client.GetBlockFinishProportionfromMarkingView();
             var mvmarkingInfo = new MVMarkingInfo
             {
-                blockId = "1344569693381464066",
-                id = "1344579106193993731",
-                position = "2000,2000,3000,3000",
-                result = "1_1",
+                BlockID = "1344569693381464066",
+                ID = "1344579106193993731",
+                Position = "2000,2000,3000,3000",
+                Result = "1_1",
             };
             var s1 = MarkingSystemApi.Client.SaveMarkingbyDoctor(mvmarkingInfo);
         }

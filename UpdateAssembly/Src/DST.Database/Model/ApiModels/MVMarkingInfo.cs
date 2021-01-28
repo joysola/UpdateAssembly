@@ -22,8 +22,8 @@ namespace DST.Database.Model
         /// <summary>
         /// 左下X、Y，右上X、Y坐标（3228,1800,3579,2180）
         /// </summary>
-        [JsonProperty("Position")]
-        public string position { get; set; }
+        [JsonProperty("position")]
+        public string Position { get; set; }
         /// <summary>
         /// 标记结果(1_1 ASC-US、1_2 ASC-H、1_3 LSIL、1_4 HSIL、1_5 gandular、1_6 glandular-adace、1_7 atrophy、1_8 repair、1_9 metaplastic)
         /// </summary>
