@@ -86,19 +86,36 @@ namespace DST.Joint.Construction.Mgmt.ViewModel
             var t6 = DictService.Instance.GetSignResultDict();
             //var h1 = DictService.Instance.GetHotpitalInfo();
             Task.WhenAll(t1, t2, t3, t4, t5, t6/*, h1*/).ConfigureAwait(false).GetAwaiter().GetResult();
+            // 标记
             var m1 = MarkingSystemApi.Client.QueryBlockDetailofMarkingView();
             var m2 = MarkingSystemApi.Client.QueryBlockIndexListofMarkingView();
-            var m3 = MarkingSystemApi.Client.QueryBlockDetailofMarkingView("1344569693381464068");
-            var m4 = MarkingSystemApi.Client.GetBlockFinishProportionfromMarkingView();
+            var m3 = MarkingSystemApi.Client.QueryBlockDetailofMarkingView("1344569693381464066");
+            var m4 = MarkingSystemApi.Client.GetBlockFinProportionfromMarkingView();
             var mvmarkingInfo = new MVMarkingInfo
             {
                 BlockID = "1344569693381464066",
-                ID = "1344579106193993731",
+                ID = "1354711126247477250",
                 Position = "2000,2000,3000,3000",
                 Result = "1_1",
             };
-            var s1 = MarkingSystemApi.Client.SaveMarkingbyDoctor(mvmarkingInfo);
-            var d1 = MarkingSystemApi.Client.DeleteMarkingbyDoctor("1354696183817179137");
+            var m5 = MarkingSystemApi.Client.SaveMarkingbyDoctor(mvmarkingInfo);
+            //var d1 = MarkingSystemApi.Client.DeleteMarkingbyDoctor("1354696183817179137");
+
+            // 复核
+            var r1 = MarkingSystemApi.Client.QueryBlockDetailofReviewMarkingView();
+            var r2 = MarkingSystemApi.Client.QueryBlockIndexListofReviewMarkingView();
+            var r3 = MarkingSystemApi.Client.QueryBlockDetailofReviewMarkingView("1331219727724449795");
+            var r4 = MarkingSystemApi.Client.GetBlockReviewFinProportionfromMarkingView();
+            var mvmarkingInfo2 = new MVMarkingInfo
+            {
+                BlockID = "1331219727724449795",
+                ID = "1354704983429222401",
+                Position = "1716,121,1572,302",
+                Result = "1_1",
+            };
+            var r5 = MarkingSystemApi.Client.SaveMarkingbyReviewer(mvmarkingInfo2);
+            //var r6 = MarkingSystemApi.Client.DeleteMarkingbyReivewrer("1354713388944461826");
+            //var r7 = MarkingSystemApi.Client.SubmitReviewMarkingbyBlock("1331219727774781442");
         }
     }
 }

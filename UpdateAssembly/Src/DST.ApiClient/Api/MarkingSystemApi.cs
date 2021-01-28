@@ -11,6 +11,7 @@ namespace DST.ApiClient.Api
 {
     public class MarkingSystemApi : BaseApi<MarkingSystemApi>
     {
+        #region 标记接口
         /// <summary>
         /// 获取某个任务的详细信息
         /// </summary>
@@ -32,7 +33,7 @@ namespace DST.ApiClient.Api
         /// <returns></returns>
         [HttpGet]
         [Url("api/deepsight-tag/tag/tag-vision-block/getTagVisionBlockFinishProportion")]
-        public ApiResponse<MVFinishRatioInfo> GetBlockFinishProportionfromMarkingView() => GetResult();
+        public ApiResponse<MVFinishRatioInfo> GetBlockFinProportionfromMarkingView() => GetResult();
         /// <summary>
         /// 修改标记、新增标记（id为空即可）
         /// 调用结束后需要调用QueryBlockDetailofMarkingView
@@ -52,12 +53,62 @@ namespace DST.ApiClient.Api
         [Url("/api/deepsight-tag/tag/tag-doctor-cell/deleteCellDoctor")]
         public ApiResponse<int?> DeleteMarkingbyDoctor(string cellDoctorId) => GetResult();
         /// <summary>
-        /// 提交该任务的标记信息
+        /// 提交该任务
         /// </summary>
         /// <param name="blockId">任务id</param>
         /// <returns></returns>
         [HttpGet]
         [Url("api/deepsight-tag/tag/tag-vision-block/subMitVisionBlock")]
         public ApiResponse<int?> SubmitMarkingsofBlock(string blockId) => GetResult();
+        #endregion 标记接口
+
+        #region 复核接口
+        /// <summary>
+        /// 获取复核医生某个任务的详细信息
+        /// </summary>
+        /// <param name="blockId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Url("api/deepsight-tag/tag/tag-vision-block/queryReviewTagVisionBlockDetail")]
+        public ApiResponse<MVBlockDetail> QueryBlockDetailofReviewMarkingView(string blockId = "") => GetResult();
+        /// <summary>
+        /// 获取复核医生所有任务列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Url("api/deepsight-tag/tag/tag-vision-block/queryReviewTagVisionBlockIndexList")]
+        public ApiResponse<List<string>> QueryBlockIndexListofReviewMarkingView() => GetResult();
+        /// <summary>
+        /// 获取复核医生标记进度
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Url("api/deepsight-tag/tag/tag-vision-block/getTagVisionBlockReivewFinishProportion")]
+        public ApiResponse<MVFinishRatioInfo> GetBlockReviewFinProportionfromMarkingView() => GetResult();
+        /// <summary>
+        /// 复核医生修改标记
+        /// </summary>
+        /// <param name="markingInfo"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Url("api/deepsight-tag/tag/tag-doctor-cell/saveReviewTagCellDoctor")]
+        public ApiResponse<int?> SaveMarkingbyReviewer([PostContent] MVMarkingInfo markingInfo) => GetResult();
+        /// <summary>
+        /// 删除复核医生的标记
+        /// </summary>
+        /// <param name="cellDoctorId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Url("api/deepsight-tag/tag/tag-doctor-cell/deleteReviewCellDoctor")]
+        public ApiResponse<int?> DeleteMarkingbyReivewrer(string cellDoctorId) => GetResult();
+        /// <summary>
+        /// 复核医生提交任务
+        /// </summary>
+        /// <param name="blockId">任务id</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Url("api/deepsight-tag/tag/tag-vision-block/subMitReviewVisionBlock")]
+        public ApiResponse<int?> SubmitReviewMarkingbyBlock(string blockId) => GetResult();
+        #endregion 复核接口
     }
 }
