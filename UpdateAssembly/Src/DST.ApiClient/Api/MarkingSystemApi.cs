@@ -44,6 +44,14 @@ namespace DST.ApiClient.Api
         [Url("api/deepsight-tag/tag/tag-doctor-cell/saveTagCellDoctor")]
         public ApiResponse<int?> SaveMarkingbyDoctor([PostContent] MVMarkingInfo markingInfo) => GetResult();
         /// <summary>
+        /// 删除标记
+        /// </summary>
+        /// <param name="cellDoctorId">标记的cellDoctorId</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Url("/api/deepsight-tag/tag/tag-doctor-cell/deleteCellDoctor")]
+        public ApiResponse<int?> DeleteMarkingbyDoctor(string cellDoctorId) => GetResult();
+        /// <summary>
         /// 提交该任务的标记信息
         /// </summary>
         /// <param name="blockId">任务id</param>

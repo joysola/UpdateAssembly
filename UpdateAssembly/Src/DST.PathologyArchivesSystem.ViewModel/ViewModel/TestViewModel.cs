@@ -77,6 +77,7 @@ namespace DST.Joint.Construction.Mgmt.ViewModel
             //var xx6 = ReportService.Instance.GetReport("1340156218083418113", "1317016574762799106");
             #endregion
             var xx = LoginService.Instance.Login(postcontent);
+            var a1 = LoginApi.Client.GetAuthorizedMens();
             var t1 = DictService.Instance.GetBiopsyFlagDict();
             var t2 = DictService.Instance.GetHPVResultDict();
             var t3 = DictService.Instance.GetGlandularEpithelialCellResultDict();
@@ -97,6 +98,7 @@ namespace DST.Joint.Construction.Mgmt.ViewModel
                 Result = "1_1",
             };
             var s1 = MarkingSystemApi.Client.SaveMarkingbyDoctor(mvmarkingInfo);
+            var d1 = MarkingSystemApi.Client.DeleteMarkingbyDoctor("1354696183817179137");
         }
     }
 }
