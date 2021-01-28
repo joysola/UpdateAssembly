@@ -66,7 +66,7 @@ namespace DST.ApiClient.Api
         /// <summary>
         /// 获取复核医生某个任务的详细信息
         /// </summary>
-        /// <param name="blockId"></param>
+        /// <param name="blockId">复核任务id</param>
         /// <returns></returns>
         [HttpGet]
         [Url("api/deepsight-tag/tag/tag-vision-block/queryReviewTagVisionBlockDetail")]
@@ -88,7 +88,7 @@ namespace DST.ApiClient.Api
         /// <summary>
         /// 复核医生修改标记
         /// </summary>
-        /// <param name="markingInfo"></param>
+        /// <param name="markingInfo">复核标记实体</param>
         /// <returns></returns>
         [HttpPost]
         [Url("api/deepsight-tag/tag/tag-doctor-cell/saveReviewTagCellDoctor")]
@@ -96,7 +96,7 @@ namespace DST.ApiClient.Api
         /// <summary>
         /// 删除复核医生的标记
         /// </summary>
-        /// <param name="cellDoctorId"></param>
+        /// <param name="cellDoctorId">复核标记的cellDoctorId</param>
         /// <returns></returns>
         [HttpGet]
         [Url("api/deepsight-tag/tag/tag-doctor-cell/deleteReviewCellDoctor")]
